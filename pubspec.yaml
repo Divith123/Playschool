@@ -38,7 +38,7 @@ dependencies:
   cached_network_image: ^3.3.1
   package_info_plus: ^5.0.1
   http: ^1.2.0
-  ota_update: ^5.1.0
+  ota_update: ^7.1.0
   permission_handler: ^11.3.0
 
 dev_dependencies:
