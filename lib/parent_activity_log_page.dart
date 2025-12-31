@@ -556,9 +556,9 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
     bool isDarkMode,
     Color primary,
   ) {
-    final color = isSelected
-        ? primary
-        : (isDarkMode ? Colors.grey[500] : Colors.grey[400]);
+    // final color = isSelected
+    //     ? primary
+    //     : (isDarkMode ? Colors.grey[500] : Colors.grey[400]);
     final textColor = isSelected
         ? const Color(0xFF102216)
         : (isDarkMode ? Colors.grey[500] : Colors.grey[400]);

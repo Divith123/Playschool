@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:playschool/staff_attendance_page.dart';
+import 'package:playschool/staff_activity_page.dart';
+import 'package:playschool/staff_medicine_log_page.dart';
+import 'package:playschool/staff_incident_report_page.dart';
+import 'package:playschool/staff_curriculum_planner_page.dart';
+import 'package:playschool/staff_milestone_tracking_page.dart';
+
 class StaffDashboardPage extends StatefulWidget {
   const StaffDashboardPage({super.key});
 
@@ -312,7 +319,17 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
                           subTextColor: subTextColor,
                           isMain: true,
                           isDarkMode: isDarkMode,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const StaffAttendancePage(),
+                              ),
+                            );
+                          },
                         ),
+
                         _buildQuickAction(
                           title: 'Daily Log',
                           subtitle: 'Food, Nap, Play',
@@ -322,16 +339,71 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
                           textColor: textColor,
                           subTextColor: subTextColor,
                           isDarkMode: isDarkMode,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const StaffActivityPage(),
+                              ),
+                            );
+                          },
                         ),
                         _buildQuickAction(
-                          title: 'Health',
-                          subtitle: 'Incidents & Meds',
-                          icon: Icons.medical_services,
+                          title: 'Meds',
+                          subtitle: 'Track Health',
+                          icon: Icons.medication,
                           bgBase: Colors.red,
                           surfaceColor: surfaceColor,
                           textColor: textColor,
                           subTextColor: subTextColor,
                           isDarkMode: isDarkMode,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const StaffMedicineLogPage(),
+                              ),
+                            );
+                          },
+                        ),
+                        _buildQuickAction(
+                          title: 'Incidents',
+                          subtitle: 'Report Injury',
+                          icon: Icons.warning_amber_rounded,
+                          bgBase: Colors.orange,
+                          surfaceColor: surfaceColor,
+                          textColor: textColor,
+                          subTextColor: subTextColor,
+                          isDarkMode: isDarkMode,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const StaffIncidentReportPage(),
+                              ),
+                            );
+                          },
+                        ),
+                        _buildQuickAction(
+                          title: 'Planning',
+                          subtitle: 'Curriculum',
+                          icon: Icons.calendar_month,
+                          bgBase: Colors.green,
+                          surfaceColor: surfaceColor,
+                          textColor: textColor,
+                          subTextColor: subTextColor,
+                          isDarkMode: isDarkMode,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const StaffCurriculumPlannerPage(),
+                              ),
+                            );
+                          },
                         ),
                         _buildQuickAction(
                           title: 'Message',
@@ -392,27 +464,38 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
                                   for (int i = 0; i < 5; i++)
                                     Positioned(
                                       left: i * 30.0,
-                                      child: Container(
-                                        width: 40,
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            color: surfaceColor,
-                                            width: 2,
-                                          ),
-                                          color: Colors.grey[200],
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                              [
-                                                'https://lh3.googleusercontent.com/aida-public/AB6AXuCp5p7j7eB_6D7GGYU8le8bbIuZJPmxmpfA8ctbXR3zTjbCJofhRimpgK2H1TyPo9LtOpH_wMwdp2j6iJPV37buzo3Z-7jIkAzGpvYltl8QnpfnLuIwrOHsk_6gtDB9rsqD-TXdlUJ4SD0_YMv1SMmJWjSz8OMMnD9wUG5U8aU6dmxn5C9OSWDuSpzdUh4c1AwV_fdFCQ4KqRHJ51KKFpE0_7NAPmn50WPx7Rgj_a-q8Jcd-MCrc34375OB8uOMKfcoCeE2Kw6zjjw',
-                                                'https://lh3.googleusercontent.com/aida-public/AB6AXuCBxAhGY3SDnMgt6mpKLQsqZHhRYWg-MGgPihkYD7Lbj_UOEsC_4wJ9zjz-6qjzJv7PDtBWg9VCYzGE-5eYyXl01GRReK_6yPldqAe7odmVguH3nR7DVYO7KIC2ojFIifZiD8R0XOKpy8vb3__QrbMlEffPhQ_fWV12l640XvJ_XowknIJpDDqb9qtM62CRSuldzrw_EKugH5Ex92yeAyGOJhCFHezAKxPBeQFoJV5HgCPmeAVAR7dqdwdtcKgARXUSjJ5OsqWHWVg',
-                                                'https://lh3.googleusercontent.com/aida-public/AB6AXuCSoxrVKjN8z4U9Q7-tdYaJ-gOd8XVVS5_nGtHGNdkn5OCPwga_PcCPtwZrOKDfB8euYJENGjBfcCa5eC5k7lOfVH-Wdy0308demmldnACWXG66ojkZH9hkQCf3LhBq0dAF0xUTkg2PbeLlgsYSlpt1wpTEcwGshItnpWbeBBc2uNZsF36u4rZYedpDsSDW_YAIYpC12XLQGBxOI5odqUs5bsmsOlNaFnEEsXfWZs0GuACyEHxdWFqRZZ3e-h2o6wHlH17TVS5tx6g',
-                                                'https://lh3.googleusercontent.com/aida-public/AB6AXuBdoySuUyijXT_CXbGw928B15naN6hOzqlrnnsYQn5th6Qn8UW6jSrh6KyDHcxnmAUPnXlO-popvLNdfa1uWC28rtsb-stH9QtC_Jn36Sk3aRQQ-SOtReuU8ZqjTET1q0buvUbui_Xa0bznVRh1Q2XCHgEMmBNn9H-gKQjmURoHQXktLM0tQHOMcoVuPpBoUFJ3W6Fxi2xwM1DNx102u6C1zY21igwDGwOWLIavWkzG56RtX8k_RV4Djga-wD8gMj2Bi9s5h3NeMvg',
-                                                'https://lh3.googleusercontent.com/aida-public/AB6AXuC5k7LP2WTcy4vr7_BNiyHDfrwD_vI2YD7MyJxmEygnfcEPZJdszs3wjbb3b2MQaAF1TQJTE_J_cbVpBS4vmvCFATNpSAbY98jpULqrDQUCIkpnFsbwLP5PM_9dCU2sDkgLM6R5YsnVmvauEUz2x8QbO8TE6oaGsg-dwGMS-RBBKPA0nTVwaptk-elIHwvzV7mA4UpKLB8B26owrFx6o2UwN9mdM33ZebXKJbyToipEYZM1BvQPeupZIVEKynyTdI15ZBi22lDli5c',
-                                              ][i],
+                                      child: InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const StaffMilestoneTrackingPage(),
                                             ),
-                                            fit: BoxFit.cover,
+                                          );
+                                        },
+                                        child: Container(
+                                          width: 40,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color: surfaceColor,
+                                              width: 2,
+                                            ),
+                                            color: Colors.grey[200],
+                                            image: DecorationImage(
+                                              image: NetworkImage(
+                                                [
+                                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuCp5p7j7eB_6D7GGYU8le8bbIuZJPmxmpfA8ctbXR3zTjbCJofhRimpgK2H1TyPo9LtOpH_wMwdp2j6iJPV37buzo3Z-7jIkAzGpvYltl8QnpfnLuIwrOHsk_6gtDB9rsqD-TXdlUJ4SD0_YMv1SMmJWjSz8OMMnD9wUG5U8aU6dmxn5C9OSWDuSpzdUh4c1AwV_fdFCQ4KqRHJ51KKFpE0_7NAPmn50WPx7Rgj_a-q8Jcd-MCrc34375OB8uOMKfcoCeE2Kw6zjjw',
+                                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuCBxAhGY3SDnMgt6mpKLQsqZHhRYWg-MGgPihkYD7Lbj_UOEsC_4wJ9zjz-6qjzJv7PDtBWg9VCYzGE-5eYyXl01GRReK_6yPldqAe7odmVguH3nR7DVYO7KIC2ojFIifZiD8R0XOKpy8vb3__QrbMlEffPhQ_fWV12l640XvJ_XowknIJpDDqb9qtM62CRSuldzrw_EKugH5Ex92yeAyGOJhCFHezAKxPBeQFoJV5HgCPmeAVAR7dqdwdtcKgARXUSjJ5OsqWHWVg',
+                                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuCSoxrVKjN8z4U9Q7-tdYaJ-gOd8XVVS5_nGtHGNdkn5OCPwga_PcCPtwZrOKDfB8euYJENGjBfcCa5eC5k7lOfVH-Wdy0308demmldnACWXG66ojkZH9hkQCf3LhBq0dAF0xUTkg2PbeLlgsYSlpt1wpTEcwGshItnpWbeBBc2uNZsF36u4rZYedpDsSDW_YAIYpC12XLQGBxOI5odqUs5bsmsOlNaFnEEsXfWZs0GuACyEHxdWFqRZZ3e-h2o6wHlH17TVS5tx6g',
+                                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuBdoySuUyijXT_CXbGw928B15naN6hOzqlrnnsYQn5th6Qn8UW6jSrh6KyDHcxnmAUPnXlO-popvLNdfa1uWC28rtsb-stH9QtC_Jn36Sk3aRQQ-SOtReuU8ZqjTET1q0buvUbui_Xa0bznVRh1Q2XCHgEMmBNn9H-gKQjmURoHQXktLM0tQHOMcoVuPpBoUFJ3W6Fxi2xwM1DNx102u6C1zY21igwDGwOWLIavWkzG56RtX8k_RV4Djga-wD8gMj2Bi9s5h3NeMvg',
+                                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuC5k7LP2WTcy4vr7_BNiyHDfrwD_vI2YD7MyJxmEygnfcEPZJdszs3wjbb3b2MQaAF1TQJTE_J_cbVpBS4vmvCFATNpSAbY98jpULqrDQUCIkpnFsbwLP5PM_9dCU2sDkgLM6R5YsnVmvauEUz2x8QbO8TE6oaGsg-dwGMS-RBBKPA0nTVwaptk-elIHwvzV7mA4UpKLB8B26owrFx6o2UwN9mdM33ZebXKJbyToipEYZM1BvQPeupZIVEKynyTdI15ZBi22lDli5c',
+                                                ][i],
+                                              ),
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -641,50 +724,55 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
     required Color subTextColor,
     required bool isDarkMode,
     bool isMain = false,
+    VoidCallback? onTap,
   }) {
     final bg = isDarkMode ? bgBase.withOpacity(0.2) : bgBase.withOpacity(0.1);
     final iconColor = isDarkMode ? bgBase.withOpacity(0.8) : bgBase;
 
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: surfaceColor,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 2),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: bg,
-              borderRadius: BorderRadius.circular(8),
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: surfaceColor,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.withOpacity(0.1)),
+          boxShadow: [
+            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 2),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: bg,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(icon, color: iconColor, size: 24),
             ),
-            child: Icon(icon, color: iconColor, size: 24),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.lexend(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: textColor,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.lexend(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
+                  ),
                 ),
-              ),
-              Text(
-                subtitle,
-                style: GoogleFonts.lexend(fontSize: 12, color: subTextColor),
-              ),
-            ],
-          ),
-        ],
+                Text(
+                  subtitle,
+                  style: GoogleFonts.lexend(fontSize: 12, color: subTextColor),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

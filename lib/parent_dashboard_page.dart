@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/parent_calendar_page.dart';
 import 'package:playschool/parent_chat_page.dart';
 import 'package:playschool/parent_gallery_page.dart';
+import 'package:playschool/parent_invoices_page.dart';
 import 'package:playschool/parent_messages_page.dart';
 import 'package:playschool/parent_transport_tracking_page.dart';
 import 'dart:ui' as ui;
@@ -469,6 +470,15 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                           label: 'Pay Fees',
                           color: Colors.orange,
                           isDarkMode: isDarkMode,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ParentInvoicesPage(),
+                              ),
+                            );
+                          },
                         ),
                       ),
                       const SizedBox(width: 12),

@@ -12,11 +12,10 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
   // Color palette
   static const Color primary = Color(0xFFeca413);
   static const Color backgroundLight = Color(0xFFf8f7f6);
-  static const Color backgroundDark = Color(
-    0xFF1a150c,
-  ); // Darkened from #221c10 for better contrast or matching user's dark theme preference if needed, but sticking to HTML #221c10 for now. Using 0xFF221c10 as per HTML.
+  // static const Color backgroundDark = Color(0xFF1a150c);
 
   // Actually, let's stick to the HTML hex codes
+
   static const Color bgDarkHtml = Color(0xFF221c10);
   static const Color textLight = Color(0xFF1b170d);
   static const Color textDark = Color(0xFFf3efe7);

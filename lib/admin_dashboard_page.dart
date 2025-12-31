@@ -1,5 +1,11 @@
-import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:playschool/admin_admissions_page.dart';
+import 'package:playschool/admin_finance_page.dart';
+import 'package:playschool/admin_staff_profile_page.dart';
+import 'package:playschool/admin_broadcast_page.dart';
+import 'package:playschool/admin_transport_page.dart';
+import 'package:playschool/services/update_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminDashboardPage extends StatefulWidget {
@@ -168,7 +174,17 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                           surfaceColor: surfaceColor,
                           textColor: textColor,
                           subTextColor: subTextColor,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const AdminStaffProfilePage(),
+                              ),
+                            );
+                          },
                         ),
+
                         _buildKPICard(
                           title: 'Pending Admissions',
                           value: '5',
@@ -179,6 +195,15 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                           surfaceColor: surfaceColor,
                           textColor: textColor,
                           subTextColor: subTextColor,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const AdminAdmissionsPage(),
+                              ),
+                            );
+                          },
                         ),
                         _buildKPICard(
                           title: 'Overdue Fees',
@@ -191,6 +216,14 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                           surfaceColor: surfaceColor,
                           textColor: textColor,
                           subTextColor: subTextColor,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AdminFinancePage(),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -252,11 +285,20 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                           surfaceColor: surfaceColor,
                         ),
                         _buildActionCard(
-                          title: 'Events Calendar',
-                          icon: Icons.event,
+                          title: 'Transport',
+                          icon: Icons.directions_bus,
                           image:
                               'https://lh3.googleusercontent.com/aida-public/AB6AXuCv7z2sHhkpzvW1UXESpPRwNwBBZeSma1Qh2y-GprvkFId4d13LvKi4HDtBpwetJGnS65YPWQd34m53uvVrRGNbH-Q1ozVyN6uagiXW8NGq4jZjmStJpzbEa66Nytq4P9SY4a-HYtCpySqtbKTDvgMgaXttmJ1JIo95_g6m5AeYgw4WWy6B3LLaoKW1LzSYtjt1fNyg3ZliGIjGSrhMRq7FLGJTN6RkKoH_aVG64jVPRw6Org_unVJZvSdA1pEdJcV2Ca7P_hJYgRE',
                           surfaceColor: surfaceColor,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const AdminTransportPage(),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -369,7 +411,16 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
               icon: Icons.chat_bubble,
               label: 'Chat',
               isSelected: _selectedIndex == 1,
-              onTap: () => setState(() => _selectedIndex = 1),
+              onTap: () {
+                // Navigate to Broadcast/Message Page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AdminBroadcastPage(),
+                    fullscreenDialog: true,
+                  ),
+                );
+              },
               isDarkMode: isDarkMode,
               badgeCount: 2,
             ),
@@ -404,85 +455,94 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
     required Color subTextColor,
     String? trend,
     bool hasPulse = false,
+    VoidCallback? onTap,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: surfaceColor,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            offset: const Offset(0, 1),
-            blurRadius: 2,
-          ),
-        ],
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                width: 32,
-                height: 32,
-                decoration: BoxDecoration(
-                  color: iconBg,
-                  borderRadius: BorderRadius.circular(16),
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: surfaceColor,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              offset: const Offset(0, 1),
+              blurRadius: 2,
+            ),
+          ],
+          border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 32,
+                  height: 32,
+                  decoration: BoxDecoration(
+                    color: iconBg,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Icon(icon, color: iconColor, size: 20),
                 ),
-                child: Icon(icon, color: iconColor, size: 20),
-              ),
-              if (trend != null)
-                Row(
-                  children: [
-                    Icon(Icons.trending_up, size: 14, color: Colors.green[600]),
-                    const SizedBox(width: 2),
-                    Text(
-                      trend,
-                      style: GoogleFonts.lexend(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
+                if (trend != null)
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.trending_up,
+                        size: 14,
                         color: Colors.green[600],
                       ),
+                      const SizedBox(width: 2),
+                      Text(
+                        trend,
+                        style: GoogleFonts.lexend(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green[600],
+                        ),
+                      ),
+                    ],
+                  )
+                else if (hasPulse)
+                  Container(
+                    width: 8,
+                    height: 8,
+                    decoration: const BoxDecoration(
+                      color: primary,
+                      shape: BoxShape.circle,
                     ),
-                  ],
-                )
-              else if (hasPulse)
-                Container(
-                  width: 8,
-                  height: 8,
-                  decoration: const BoxDecoration(
-                    color: primary,
-                    shape: BoxShape.circle,
+                  ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  value,
+                  style: GoogleFonts.lexend(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
                   ),
                 ),
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                value,
-                style: GoogleFonts.lexend(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: textColor,
+                Text(
+                  title,
+                  style: GoogleFonts.lexend(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: subTextColor,
+                  ),
                 ),
-              ),
-              Text(
-                title,
-                style: GoogleFonts.lexend(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: subTextColor,
-                ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -492,52 +552,57 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
     required IconData icon,
     required String image,
     required Color surfaceColor,
+    VoidCallback? onTap,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: surfaceColor,
-        borderRadius: BorderRadius.circular(12),
-        image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
-      ),
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
       child: Container(
         decoration: BoxDecoration(
+          color: surfaceColor,
           borderRadius: BorderRadius.circular(12),
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.transparent, Colors.black.withOpacity(0.6)],
-          ),
+          image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
         ),
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: ClipOval(
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                  child: Container(
-                    padding: const EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
-                      shape: BoxShape.circle,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.transparent, Colors.black.withOpacity(0.6)],
+            ),
+          ),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.centerRight,
+                child: ClipOval(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(icon, color: Colors.white, size: 20),
                     ),
-                    child: Icon(icon, color: Colors.white, size: 20),
                   ),
                 ),
               ),
-            ),
-            Text(
-              title,
-              style: GoogleFonts.lexend(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+              Text(
+                title,
+                style: GoogleFonts.lexend(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -676,5 +741,15 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         ],
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Optional: Auto-check on load
+    // UpdateService().showUpdateDialog(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Ideally we want to be subtle, but for verification:
+    });
   }
 }
