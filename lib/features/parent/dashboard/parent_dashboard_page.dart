@@ -314,10 +314,11 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                       ),
                     ),
                     padding: const EdgeInsets.all(20), // p-5 = 20px
-                    child: Row(
+                    child: Column(
                       children: [
                         // Profile Image
                         Stack(
+                          alignment: Alignment.center,
                           children: [
                             Container(
                               width: 80,
@@ -362,79 +363,78 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                             ),
                           ],
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(height: 16),
                         // Profile Info
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Good Morning, Sarah!',
-                                style: _displayFont(
-                                  // Using display font as per html "font-display"
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: isDarkMode
-                                      ? Colors.grey[400]
-                                      : Colors.grey[500],
-                                ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Good Morning, Sarah!',
+                              style: _displayFont(
+                                // Using display font as per html "font-display"
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: isDarkMode
+                                    ? Colors.grey[400]
+                                    : Colors.grey[500],
                               ),
-                              const SizedBox(height: 4),
-                              Text(
-                                'Leo',
-                                style: _displayFont(
-                                  fontSize: 20, // xl
-                                  fontWeight: FontWeight.bold,
-                                  color: isDarkMode
-                                      ? Colors.white
-                                      : Colors.grey[900],
-                                  height: 1.25,
-                                ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              'Leo',
+                              style: _displayFont(
+                                fontSize: 20, // xl
+                                fontWeight: FontWeight.bold,
+                                color: isDarkMode
+                                    ? Colors.white
+                                    : Colors.grey[900],
+                                height: 1.25,
                               ),
-                              const SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 8,
-                                      vertical: 4,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: isDarkMode
-                                          ? Colors.green[900]!.withOpacity(0.3)
-                                          : Colors.green[50],
-                                      borderRadius: BorderRadius.circular(6),
-                                      border: Border.all(
-                                        color: Colors.green[600]!.withOpacity(
-                                          0.2,
-                                        ), // ring-1 ring-inset
-                                      ),
-                                    ),
-                                    child: Text(
-                                      'In Art Class 🎨',
-                                      style: _displayFont(
-                                        fontSize: 12, // xs
-                                        fontWeight: FontWeight.w500,
-                                        color: isDarkMode
-                                            ? Colors.green[300]
-                                            : Colors.green[700],
-                                      ),
+                            ),
+                            const SizedBox(height: 8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 8,
+                                    vertical: 4,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: isDarkMode
+                                        ? Colors.green[900]!.withOpacity(0.3)
+                                        : Colors.green[50],
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(
+                                      color: Colors.green[600]!.withOpacity(
+                                        0.2,
+                                      ), // ring-1 ring-inset
                                     ),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    'Checked in 8:00 AM',
+                                  child: Text(
+                                    'In Art Class 🎨',
                                     style: _displayFont(
-                                      fontSize: 12,
+                                      fontSize: 12, // xs
+                                      fontWeight: FontWeight.w500,
                                       color: isDarkMode
-                                          ? Colors.grey[500]
-                                          : Colors.grey[400],
+                                          ? Colors.green[300]
+                                          : Colors.green[700],
                                     ),
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'Checked in 8:00 AM',
+                                  style: _displayFont(
+                                    fontSize: 12,
+                                    color: isDarkMode
+                                        ? Colors.grey[500]
+                                        : Colors.grey[400],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ],
                     ),

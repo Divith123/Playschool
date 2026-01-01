@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playschool/features/common/app_settings_page.dart';
 
 class StaffMyAttendancePage extends StatefulWidget {
   const StaffMyAttendancePage({super.key});
@@ -39,6 +40,19 @@ class _StaffMyAttendancePageState extends State<StaffMyAttendancePage> {
         backgroundColor: bgColor,
         foregroundColor: textColor,
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings, color: textColor),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AppSettingsPage(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [

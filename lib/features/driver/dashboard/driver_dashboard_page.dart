@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/features/auth/login_page.dart';
+import 'package:playschool/features/common/app_settings_page.dart';
 import 'package:playschool/features/driver/driver_trip_log_page.dart';
 import 'package:playschool/features/driver/driver_maintenance_log_page.dart';
 import 'package:playschool/features/driver/driver_route_detail_page.dart';
@@ -42,11 +42,13 @@ class _DriverDashboardPageState extends State<DriverDashboardPage> {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            icon: Icon(Icons.logout, color: textColor),
+            icon: Icon(Icons.settings, color: textColor),
             onPressed: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
+                MaterialPageRoute(
+                  builder: (context) => const AppSettingsPage(),
+                ),
               );
             },
           ),

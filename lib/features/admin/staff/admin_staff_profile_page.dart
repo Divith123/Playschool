@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playschool/features/common/app_settings_page.dart';
 
 class AdminStaffProfilePage extends StatelessWidget {
   const AdminStaffProfilePage({super.key});
@@ -532,25 +533,16 @@ class AdminStaffProfilePage extends StatelessWidget {
                           color: textColor,
                         ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          foregroundColor: primary,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                        child: Text(
-                          'Edit',
-                          style: GoogleFonts.manrope(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AppSettingsPage(),
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.settings, color: primary),
                       ),
                     ],
                   ),

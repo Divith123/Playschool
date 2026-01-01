@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/parent/services/parent_pickup_manager_page.dart';
+import 'package:playschool/features/common/app_settings_page.dart';
 
 class ParentProfilePage extends StatelessWidget {
   const ParentProfilePage({super.key});
@@ -65,7 +66,14 @@ class ParentProfilePage extends StatelessWidget {
               _buildMenuItem(
                 icon: Icons.settings_outlined,
                 label: 'Settings',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AppSettingsPage(),
+                    ),
+                  );
+                },
                 isDarkMode: isDarkMode,
                 surfaceColor: surfaceColor,
                 textColor: textColor,
