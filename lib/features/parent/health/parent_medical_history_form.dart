@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -15,11 +15,7 @@ class _ParentMedicalHistoryFormPageState
     extends State<ParentMedicalHistoryFormPage> {
   final _formKey = GlobalKey<FormState>();
 
-  String _doctorName = '';
-  String _doctorPhone = '';
-  String _hospitalPref = '';
   String _bloodGroup = 'A+';
-  String _insuranceNo = '';
   final List<String> _allergies = [];
 
   final TextEditingController _allergyController = TextEditingController();
@@ -60,7 +56,7 @@ class _ParentMedicalHistoryFormPageState
               _buildTextField(
                 label: 'Family Doctor Name',
                 icon: Icons.person_outline,
-                onChanged: (val) => _doctorName = val,
+                onChanged: (val) {},
                 isDarkMode: isDarkMode,
                 surfaceColor: surfaceColor,
                 textColor: textColor,
@@ -70,7 +66,7 @@ class _ParentMedicalHistoryFormPageState
                 label: 'Doctor Phone Number',
                 icon: Icons.phone_outlined,
                 keyboardType: TextInputType.phone,
-                onChanged: (val) => _doctorPhone = val,
+                onChanged: (val) {},
                 isDarkMode: isDarkMode,
                 surfaceColor: surfaceColor,
                 textColor: textColor,
@@ -79,7 +75,7 @@ class _ParentMedicalHistoryFormPageState
               _buildTextField(
                 label: 'Preferred Hospital',
                 icon: Icons.local_hospital_outlined,
-                onChanged: (val) => _hospitalPref = val,
+                onChanged: (val) {},
                 isDarkMode: isDarkMode,
                 surfaceColor: surfaceColor,
                 textColor: textColor,
@@ -93,7 +89,7 @@ class _ParentMedicalHistoryFormPageState
                 decoration: BoxDecoration(
                   color: surfaceColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                  border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
                 ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
@@ -112,7 +108,7 @@ class _ParentMedicalHistoryFormPageState
               _buildTextField(
                 label: 'Health Insurance Policy #',
                 icon: Icons.badge_outlined,
-                onChanged: (val) => _insuranceNo = val,
+                onChanged: (val) {},
                 isDarkMode: isDarkMode,
                 surfaceColor: surfaceColor,
                 textColor: textColor,
@@ -162,7 +158,7 @@ class _ParentMedicalHistoryFormPageState
                     .map(
                       (a) => Chip(
                         label: Text(a),
-                        backgroundColor: Colors.red.withOpacity(0.1),
+                        backgroundColor: Colors.red.withValues(alpha: 0.1),
                         labelStyle: const TextStyle(color: Colors.red),
                         deleteIcon: const Icon(
                           Icons.close,
@@ -173,7 +169,9 @@ class _ParentMedicalHistoryFormPageState
                           setState(() => _allergies.remove(a));
                         },
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.red.withOpacity(0.3)),
+                          side: BorderSide(
+                            color: Colors.red.withValues(alpha: 0.3),
+                          ),
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
@@ -242,7 +240,7 @@ class _ParentMedicalHistoryFormPageState
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.grey.withOpacity(0.1)),
+          borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0.1)),
         ),
       ),
       validator: (val) {

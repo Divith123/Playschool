@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminStaffSchedulerPage extends StatefulWidget {
@@ -87,7 +87,7 @@ class _AdminStaffSchedulerPageState extends State<AdminStaffSchedulerPage> {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: _days.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 12),
+              separatorBuilder: (context, index) => const SizedBox(width: 12),
               itemBuilder: (context, index) {
                 final day = _days[index];
                 final isSelected = day == _selectedDay;
@@ -124,7 +124,7 @@ class _AdminStaffSchedulerPageState extends State<AdminStaffSchedulerPage> {
             child: ListView.separated(
               padding: const EdgeInsets.all(16),
               itemCount: _staffShifts.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 12),
+              separatorBuilder: (context, index) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
                 final shift = _staffShifts[index];
                 return _buildShiftCard(
@@ -156,7 +156,7 @@ class _AdminStaffSchedulerPageState extends State<AdminStaffSchedulerPage> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),

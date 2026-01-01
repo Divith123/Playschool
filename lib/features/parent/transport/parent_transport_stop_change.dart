@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -74,7 +74,7 @@ class _ParentTransportStopChangePageState
 
             _buildSectionLabel('Select New Stop', textColor),
             DropdownButtonFormField<String>(
-              value: _selectedStop,
+              initialValue: _selectedStop,
               dropdownColor: surfaceColor,
               style: TextStyle(color: textColor),
               decoration: InputDecoration(
@@ -170,7 +170,7 @@ class _ParentTransportStopChangePageState
             border: Border.all(
               color: isSelected
                   ? AppColors.primary
-                  : Colors.grey.withOpacity(0.5),
+                  : Colors.grey.withValues(alpha: 0.5),
             ),
           ),
           child: Center(

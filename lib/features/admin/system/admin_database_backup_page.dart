@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -28,7 +28,7 @@ class AdminDatabaseBackupPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: Colors.green.withOpacity(0.1),
+                color: Colors.green.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(Icons.cloud_done, size: 80, color: Colors.green),
@@ -92,7 +92,7 @@ class AdminDatabaseBackupPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isDanger
-              ? Colors.red.withOpacity(0.3)
+              ? Colors.red.withValues(alpha: 0.3)
               : (isDarkMode ? Colors.white10 : Colors.grey[200]!),
         ),
       ),

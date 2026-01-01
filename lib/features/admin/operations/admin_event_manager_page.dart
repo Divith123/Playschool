@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -138,7 +138,7 @@ class _AdminEventManagerPageState extends State<AdminEventManagerPage>
                     if (isTicketed)
                       Chip(
                         label: const Text('Tickets Status: Active'),
-                        backgroundColor: AppColors.secondary.withOpacity(0.2),
+                        backgroundColor: AppColors.secondary.withValues(alpha: 0.2),
                         labelStyle: const TextStyle(
                           fontSize: 12,
                           color: AppColors.secondary,
@@ -148,7 +148,7 @@ class _AdminEventManagerPageState extends State<AdminEventManagerPage>
                     if (volunteersNeeded)
                       Chip(
                         label: const Text('Volunteers Wanted'),
-                        backgroundColor: AppColors.accent.withOpacity(0.2),
+                        backgroundColor: AppColors.accent.withValues(alpha: 0.2),
                         labelStyle: const TextStyle(
                           fontSize: 12,
                           color: AppColors.accent,
@@ -207,7 +207,7 @@ class _AdminEventManagerPageState extends State<AdminEventManagerPage>
             ),
             value: true,
             onChanged: (val) {},
-            activeColor: AppColors.primary,
+            activeThumbColor: AppColors.primary,
           ),
           SwitchListTile(
             title: Text(
@@ -216,7 +216,7 @@ class _AdminEventManagerPageState extends State<AdminEventManagerPage>
             ),
             value: false,
             onChanged: (val) {},
-            activeColor: AppColors.primary,
+            activeThumbColor: AppColors.primary,
           ),
 
           const SizedBox(height: 32),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class StaffClassSwitcherPage extends StatelessWidget {
@@ -44,7 +44,7 @@ class StaffClassSwitcherPage extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? AppColors.primary.withOpacity(0.1)
+                    ? AppColors.primary.withValues(alpha: 0.1)
                     : (isDarkMode
                           ? AppColors.surfaceDark
                           : AppColors.surfaceLight),

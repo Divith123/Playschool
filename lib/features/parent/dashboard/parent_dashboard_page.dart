@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/parent/academic/parent_calendar_page.dart';
@@ -69,7 +69,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, -5),
             ),
@@ -108,7 +108,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: primary.withOpacity(0.3),
+                        color: primary.withValues(alpha: 0.3),
                         blurRadius: 10,
                         offset: const Offset(0, 4),
                       ),
@@ -188,8 +188,8 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
         // Top App Bar
         Container(
           decoration: BoxDecoration(
-            color: (isDarkMode ? backgroundDark : backgroundLight).withOpacity(
-              0.95,
+            color: (isDarkMode ? backgroundDark : backgroundLight).withValues(
+              alpha: 0.95,
             ),
             border: Border(
               bottom: BorderSide(
@@ -210,7 +210,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 4,
                       offset: const Offset(0, 1),
                     ),
@@ -244,7 +244,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 4,
                       offset: const Offset(0, 1),
                     ),
@@ -301,7 +301,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 2,
                           offset: const Offset(0, 1),
                         ),
@@ -327,7 +327,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                                 shape: BoxShape.circle,
                                 // ring-4 ring-primary/20
                                 border: Border.all(
-                                  color: primary.withOpacity(0.2),
+                                  color: primary.withValues(alpha: 0.2),
                                   width: 4,
                                 ),
                                 image: const DecorationImage(
@@ -402,12 +402,14 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                                   ),
                                   decoration: BoxDecoration(
                                     color: isDarkMode
-                                        ? Colors.green[900]!.withOpacity(0.3)
+                                        ? Colors.green[900]!.withValues(
+                                            alpha: 0.3,
+                                          )
                                         : Colors.green[50],
                                     borderRadius: BorderRadius.circular(6),
                                     border: Border.all(
-                                      color: Colors.green[600]!.withOpacity(
-                                        0.2,
+                                      color: Colors.green[600]!.withValues(
+                                        alpha: 0.2,
                                       ), // ring-1 ring-inset
                                     ),
                                   ),
@@ -885,7 +887,9 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.1), // shadow-lg
+                          color: Colors.black.withValues(
+                            alpha: 0.1,
+                          ), // shadow-lg
                           blurRadius: 10,
                           offset: const Offset(0, 10),
                           spreadRadius: -3,
@@ -903,7 +907,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                             width: 80,
                             height: 80,
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                               shape: BoxShape.circle,
                             ),
                             child: ClipOval(
@@ -922,7 +926,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: const Icon(
@@ -982,7 +986,9 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
   }) {
     // Determine colors based on dark mode like standard tailwind classes
     // bg-blue-50 dark:bg-blue-900/20
-    final bgColor = isDarkMode ? color[900]!.withOpacity(0.2) : color[50]!;
+    final bgColor = isDarkMode
+        ? color[900]!.withValues(alpha: 0.2)
+        : color[50]!;
     // text-blue-600 dark:text-blue-400
     final textColor = isDarkMode ? color[400]! : color[600]!;
 
@@ -1034,7 +1040,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
         borderRadius: BorderRadius.circular(16), // rounded-2xl
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 2,
             offset: const Offset(0, 1),
           ),
@@ -1071,7 +1077,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.5),
+                        Colors.black.withValues(alpha: 0.5),
                       ],
                     ),
                   ),
@@ -1198,7 +1204,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 2,
                   offset: const Offset(0, 1),
                 ),
@@ -1258,7 +1264,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                               decoration: BoxDecoration(
                                 color: isDarkMode
                                     ? (tag['color'] as MaterialColor)[900]!
-                                          .withOpacity(0.2)
+                                          .withValues(alpha: 0.2)
                                     : (tag['color'] as MaterialColor)[50],
                                 borderRadius: BorderRadius.circular(4),
                               ),

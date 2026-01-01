@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -169,10 +169,14 @@ class _ParentScholarshipApplyPageState
         style: GoogleFonts.lexend(fontSize: 12, color: Colors.grey),
       ),
       value: value,
+      // ignore: deprecated_member_use
       groupValue: _scholarshipType,
       activeColor: AppColors.primary,
       contentPadding: EdgeInsets.zero,
-      onChanged: (val) => setState(() => _scholarshipType = val!),
+      // ignore: deprecated_member_use
+      onChanged: (val) {
+        if (val != null) setState(() => _scholarshipType = val);
+      },
     );
   }
 

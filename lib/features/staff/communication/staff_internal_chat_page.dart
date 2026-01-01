@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 
@@ -147,7 +147,7 @@ class _StaffInternalChatPageState extends State<StaffInternalChatPage> {
                         style: GoogleFonts.lexend(
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
-                          color: textColor.withOpacity(0.7),
+                          color: textColor.withValues(alpha: 0.7),
                         ),
                       ),
                       const SizedBox(width: 4),
@@ -173,7 +173,7 @@ class _StaffInternalChatPageState extends State<StaffInternalChatPage> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -210,7 +210,7 @@ class _StaffInternalChatPageState extends State<StaffInternalChatPage> {
         color: surfaceColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, -4),
           ),

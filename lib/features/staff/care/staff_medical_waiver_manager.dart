@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/search_bar.dart';
@@ -102,7 +102,7 @@ class _StaffMedicalWaiverManagerPageState
             child: ListView.separated(
               itemCount: _students.length,
               separatorBuilder: (ctx, i) =>
-                  Divider(color: Colors.grey.withOpacity(0.1), height: 1),
+                  Divider(color: Colors.grey.withValues(alpha: 0.1), height: 1),
               itemBuilder: (context, index) {
                 final student = _students[index];
                 return Container(
@@ -164,7 +164,7 @@ class _StaffMedicalWaiverManagerPageState
       flex: 1,
       child: Icon(
         allowed ? Icons.check_circle : Icons.cancel,
-        color: allowed ? AppColors.success : Colors.red.withOpacity(0.5),
+        color: allowed ? AppColors.success : Colors.red.withValues(alpha: 0.5),
         size: 24,
       ),
     );

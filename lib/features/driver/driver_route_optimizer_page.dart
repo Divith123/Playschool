@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -63,7 +63,7 @@ class _DriverRouteOptimizerPageState extends State<DriverRouteOptimizerPage> {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            color: Colors.blue.withOpacity(0.1),
+            color: Colors.blue.withValues(alpha: 0.1),
             child: Row(
               children: [
                 Icon(Icons.info_outline, color: Colors.blue),
@@ -98,7 +98,7 @@ class _DriverRouteOptimizerPageState extends State<DriverRouteOptimizerPage> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 4,
                         ),
                       ],

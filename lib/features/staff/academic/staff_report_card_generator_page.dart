@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -41,7 +41,7 @@ class _StaffReportCardGeneratorPageState
           children: [
             ..._scores.keys
                 .map((skill) => _buildRubricSlider(skill, isDarkMode))
-                .toList(),
+                ,
             const SizedBox(height: 24),
             _buildTextField('Teacher\'s Comments', isDarkMode, maxLines: 5),
             const SizedBox(height: 32),

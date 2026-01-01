@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -47,7 +47,7 @@ class _AdminWhatsappBulkSenderPageState
           children: [
             _buildLabel('Select Audience', textColor),
             DropdownButtonFormField<String>(
-              value: _selectedGroup,
+              initialValue: _selectedGroup,
               dropdownColor: surfaceColor,
               style: TextStyle(color: textColor),
               decoration: _buildInputDeco(surfaceColor),
@@ -116,7 +116,7 @@ class _AdminWhatsappBulkSenderPageState
                 }
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Sending to ${_selectedGroup}...'),
+                    content: Text('Sending to $_selectedGroup...'),
                     backgroundColor: AppColors.success,
                   ),
                 );

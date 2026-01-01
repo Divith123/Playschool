@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -74,9 +74,9 @@ class _AdminEpidemicTrackerPageState extends State<AdminEpidemicTrackerPage> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.1),
+                color: Colors.red.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.red.withOpacity(0.5)),
+                border: Border.all(color: Colors.red.withValues(alpha: 0.5)),
               ),
               child: Row(
                 children: [
@@ -126,7 +126,7 @@ class _AdminEpidemicTrackerPageState extends State<AdminEpidemicTrackerPage> {
                 decoration: BoxDecoration(
                   color: surfaceColor,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                  border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
                 ),
                 child: Column(
                   children: [
@@ -202,9 +202,9 @@ class _AdminEpidemicTrackerPageState extends State<AdminEpidemicTrackerPage> {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: color.withOpacity(0.2),
+          color: color.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withOpacity(0.5), width: 2),
+          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
         ),
         child: Center(
           child: Column(
@@ -254,7 +254,7 @@ class _AdminEpidemicTrackerPageState extends State<AdminEpidemicTrackerPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -297,7 +297,7 @@ class _AdminEpidemicTrackerPageState extends State<AdminEpidemicTrackerPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: riskColor.withOpacity(0.1),
+                  color: riskColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(

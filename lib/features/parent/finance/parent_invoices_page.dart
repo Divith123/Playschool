@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentInvoicesPage extends StatefulWidget {
@@ -39,7 +39,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                 pinned: true,
                 delegate: _StickyHeaderDelegate(
                   child: Container(
-                    color: bgColor.withOpacity(0.95),
+                    color: bgColor.withValues(alpha: 0.95),
                     padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                     child: SafeArea(
                       bottom: false,
@@ -89,7 +89,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 20,
                               offset: const Offset(0, 4),
                             ),
@@ -105,8 +105,8 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                   colors: [
-                                    const Color(0xFF0d1b12).withOpacity(0.8),
-                                    const Color(0xFF0d1b12).withOpacity(0.2),
+                                    const Color(0xFF0d1b12).withValues(alpha: 0.8),
+                                    const Color(0xFF0d1b12).withValues(alpha: 0.2),
                                   ],
                                 ),
                               ),
@@ -152,7 +152,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                                       Container(
                                         padding: const EdgeInsets.all(8),
                                         decoration: BoxDecoration(
-                                          color: Colors.white.withOpacity(0.1),
+                                          color: Colors.white.withValues(alpha: 0.1),
                                           borderRadius: BorderRadius.circular(
                                             8,
                                           ),
@@ -220,7 +220,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                                             ),
                                           ),
                                           elevation: 5,
-                                          shadowColor: primary.withOpacity(0.3),
+                                          shadowColor: primary.withValues(alpha: 0.3),
                                         ),
                                         child: Row(
                                           children: [
@@ -308,7 +308,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                           vertical: 2,
                         ),
                         decoration: BoxDecoration(
-                          color: primary.withOpacity(0.2),
+                          color: primary.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
@@ -341,7 +341,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                     textColor: textColor,
                     subColor: subColor,
                     btnLabel: 'Pay Now',
-                    btnBg: primary.withOpacity(0.1),
+                    btnBg: primary.withValues(alpha: 0.1),
                     btnText: isDarkMode ? primary : Colors.green[700]!,
                     hoverColor: primary,
                   ),
@@ -360,7 +360,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                     textColor: textColor,
                     subColor: subColor,
                     btnLabel: 'Pay Now',
-                    btnBg: primary.withOpacity(0.1),
+                    btnBg: primary.withValues(alpha: 0.1),
                     btnText: isDarkMode ? primary : Colors.green[700]!,
                     hoverColor: primary,
                   ),
@@ -394,7 +394,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                         ),
                         decoration: BoxDecoration(
                           color: isDarkMode
-                              ? Colors.red[900]!.withOpacity(0.3)
+                              ? Colors.red[900]!.withValues(alpha: 0.3)
                               : Colors.red[100],
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -427,7 +427,7 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                     amountColor: isDarkMode ? Colors.red[400] : Colors.red[600],
                     icon: Icons.warning,
                     iconBg: isDarkMode
-                        ? Colors.red[900]!.withOpacity(0.3)
+                        ? Colors.red[900]!.withValues(alpha: 0.3)
                         : Colors.red[100]!,
                     iconColor: isDarkMode ? Colors.red[400]! : Colors.red[600]!,
                     isDarkMode: isDarkMode,
@@ -435,12 +435,12 @@ class _ParentInvoicesPageState extends State<ParentInvoicesPage> {
                     subColor: subColor,
                     btnLabel: 'Pay Now',
                     btnBg: isDarkMode
-                        ? Colors.red[900]!.withOpacity(0.5)
+                        ? Colors.red[900]!.withValues(alpha: 0.5)
                         : Colors.red[100]!,
                     btnText: isDarkMode ? Colors.red[300]! : Colors.red[700]!,
                     bgColor: isDarkMode
-                        ? Colors.red[900]!.withOpacity(0.05)
-                        : Colors.red[50]!.withOpacity(0.3),
+                        ? Colors.red[900]!.withValues(alpha: 0.05)
+                        : Colors.red[50]!.withValues(alpha: 0.3),
                     isOverdue: true,
                   ),
                 ]),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 import 'package:playschool/widgets/search_bar.dart';
@@ -145,7 +145,7 @@ class _AdminSettingsRolesPageState extends State<AdminSettingsRolesPage> {
       title: Text(title, style: AppTextStyles.bodyLarge(isDarkMode)),
       value: value,
       onChanged: (val) {},
-      activeColor: AppColors.primary,
+      activeThumbColor: AppColors.primary,
       contentPadding: EdgeInsets.zero,
     );
   }

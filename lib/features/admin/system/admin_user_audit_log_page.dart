@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/search_bar.dart';
@@ -81,7 +81,7 @@ class _AdminUserAuditLogPageState extends State<AdminUserAuditLogPage> {
             child: ListView.separated(
               itemCount: _logs.length,
               separatorBuilder: (ctx, i) =>
-                  Divider(color: Colors.grey.withOpacity(0.1), height: 1),
+                  Divider(color: Colors.grey.withValues(alpha: 0.1), height: 1),
               itemBuilder: (context, index) {
                 final log = _logs[index];
                 return Container(
@@ -95,7 +95,7 @@ class _AdminUserAuditLogPageState extends State<AdminUserAuditLogPage> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.1),
+                          color: Colors.blue.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(

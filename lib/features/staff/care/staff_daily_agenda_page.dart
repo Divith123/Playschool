@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class StaffDailyAgendaPage extends StatelessWidget {
@@ -127,19 +127,19 @@ class StaffDailyAgendaPage extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: isCurrent
-                    ? Colors.blue.withOpacity(0.1)
+                    ? Colors.blue.withValues(alpha: 0.1)
                     : (isDarkMode
                           ? AppColors.surfaceDark
                           : AppColors.surfaceLight),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: isCurrent
-                      ? Colors.blue.withOpacity(0.5)
+                      ? Colors.blue.withValues(alpha: 0.5)
                       : Colors.transparent,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   ),

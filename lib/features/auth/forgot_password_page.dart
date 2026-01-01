@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -75,7 +75,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           decoration: BoxDecoration(
             color: surfaceColor,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.grey.withOpacity(0.2)),
+            border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
           ),
           child: TextField(
             controller: _emailController,

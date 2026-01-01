@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
-import 'package:playschool/widgets/status_badge.dart';
 
 class ParentSlotBookingPage extends StatefulWidget {
   const ParentSlotBookingPage({super.key});
@@ -132,11 +131,11 @@ class _ParentSlotBookingPageState extends State<ParentSlotBookingPage> {
                         borderRadius: BorderRadius.circular(16),
                         border: isSelected
                             ? null
-                            : Border.all(color: Colors.grey.withOpacity(0.2)),
+                            : Border.all(color: Colors.grey.withValues(alpha: 0.2)),
                         boxShadow: isSelected
                             ? [
                                 BoxShadow(
-                                  color: AppColors.primary.withOpacity(0.4),
+                                  color: AppColors.primary.withValues(alpha: 0.4),
                                   blurRadius: 8,
                                   offset: const Offset(0, 4),
                                 ),
@@ -236,7 +235,7 @@ class _ParentSlotBookingPageState extends State<ParentSlotBookingPage> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primary.withOpacity(0.1) : surfaceColor,
+          color: isSelected ? AppColors.primary.withValues(alpha: 0.1) : surfaceColor,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: isSelected ? AppColors.primary : Colors.transparent,
@@ -300,7 +299,7 @@ class _ParentSlotBookingPageState extends State<ParentSlotBookingPage> {
                   border: Border.all(
                     color: isSelected
                         ? AppColors.primary
-                        : Colors.grey.withOpacity(0.3),
+                        : Colors.grey.withValues(alpha: 0.3),
                   ),
                 ),
                 child: Text(
@@ -368,7 +367,7 @@ class _ParentSlotBookingPageState extends State<ParentSlotBookingPage> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.1),
+                color: Colors.grey.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(

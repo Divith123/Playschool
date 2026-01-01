@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -69,9 +69,9 @@ class _StaffLeaveApplyPageState extends State<StaffLeaveApplyPage> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.1),
+                color: Colors.blue.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.blue.withOpacity(0.3)),
+                border: Border.all(color: Colors.blue.withValues(alpha: 0.3)),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -101,7 +101,7 @@ class _StaffLeaveApplyPageState extends State<StaffLeaveApplyPage> {
 
   Widget _buildDropdown(String label, List<String> items, bool isDarkMode) {
     return DropdownButtonFormField<String>(
-      value: _leaveType,
+      initialValue: _leaveType,
       items: items
           .map((e) => DropdownMenuItem(value: e, child: Text(e)))
           .toList(),

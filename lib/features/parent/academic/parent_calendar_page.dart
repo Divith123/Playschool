@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentCalendarPage extends StatefulWidget {
@@ -43,8 +43,8 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
         ),
         centerTitle: true,
         backgroundColor: isDarkMode
-            ? backgroundDark.withOpacity(0.95)
-            : backgroundLight.withOpacity(0.95),
+            ? backgroundDark.withValues(alpha: 0.95)
+            : backgroundLight.withValues(alpha: 0.95),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: textColor),
@@ -77,7 +77,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 1,
                           offset: const Offset(0, 1),
                         ),
@@ -394,7 +394,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: primary.withOpacity(0.3),
+                      color: primary.withValues(alpha: 0.3),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -441,7 +441,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
           borderRadius: BorderRadius.circular(20), // stadium
           boxShadow: [
             BoxShadow(
-              color: primary.withOpacity(0.2),
+              color: primary.withValues(alpha: 0.2),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -465,7 +465,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
                   width: 4,
                   height: 4,
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
+                    color: Colors.black.withValues(alpha: 0.4),
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -474,7 +474,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
                   width: 4,
                   height: 4,
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
+                    color: Colors.black.withValues(alpha: 0.4),
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -533,7 +533,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
     required Color borderColor,
     required Color textColor,
   }) {
-    Color tagBg = isDarkMode ? tagColor[900]!.withOpacity(0.3) : tagColor[50]!;
+    Color tagBg = isDarkMode ? tagColor[900]!.withValues(alpha: 0.3) : tagColor[50]!;
     Color tagText = isDarkMode ? tagColor[100]! : tagColor[700]!;
 
     return Row(
@@ -581,7 +581,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 1,
                   offset: const Offset(0, 1),
                 ),
@@ -660,7 +660,7 @@ class _ParentCalendarPageState extends State<ParentCalendarPage> {
                             width: 24,
                             height: 24,
                             decoration: BoxDecoration(
-                              color: avatarColor.withOpacity(0.2),
+                              color: avatarColor.withValues(alpha: 0.2),
                               shape: BoxShape.circle,
                             ),
                             alignment: Alignment.center,

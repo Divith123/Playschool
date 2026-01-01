@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -44,7 +44,7 @@ class _StaffBodyMapAnalyzerPageState extends State<StaffBodyMapAnalyzerPage> {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            color: AppColors.primary.withOpacity(0.1),
+            color: AppColors.primary.withValues(alpha: 0.1),
             child: Row(
               children: [
                 Icon(Icons.info_outline, color: AppColors.primary),
@@ -76,7 +76,7 @@ class _StaffBodyMapAnalyzerPageState extends State<StaffBodyMapAnalyzerPage> {
                           width: 300,
                           height: 500,
                           decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
+                            color: Colors.grey.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(color: Colors.grey, width: 2),
                           ),
@@ -113,14 +113,14 @@ class _StaffBodyMapAnalyzerPageState extends State<StaffBodyMapAnalyzerPage> {
                             child: Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.red.withOpacity(0.8),
+                                color: Colors.red.withValues(alpha: 0.8),
                                 border: Border.all(
                                   color: Colors.white,
                                   width: 2,
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.3),
+                                    color: Colors.black.withValues(alpha: 0.3),
                                     blurRadius: 4,
                                   ),
                                 ],
@@ -155,7 +155,7 @@ class _StaffBodyMapAnalyzerPageState extends State<StaffBodyMapAnalyzerPage> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 20,
                   offset: const Offset(0, -5),
                 ),
@@ -175,7 +175,7 @@ class _StaffBodyMapAnalyzerPageState extends State<StaffBodyMapAnalyzerPage> {
                 ),
                 const SizedBox(height: 16),
                 DropdownButtonFormField<String>(
-                  value: _selectedSeverity,
+                  initialValue: _selectedSeverity,
                   dropdownColor: surfaceColor,
                   style: TextStyle(color: textColor),
                   decoration: InputDecoration(

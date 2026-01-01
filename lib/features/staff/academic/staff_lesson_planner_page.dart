@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffLessonPlannerPage extends StatefulWidget {
@@ -110,7 +110,7 @@ class _StaffLessonPlannerPageState extends State<StaffLessonPlannerPage> {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: _weekDays.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 8),
+              separatorBuilder: (context, index) => const SizedBox(width: 8),
               itemBuilder: (context, index) {
                 final day = _weekDays[index];
                 final isSelected = day == _selectedDay;
@@ -124,7 +124,9 @@ class _StaffLessonPlannerPageState extends State<StaffLessonPlannerPage> {
                       borderRadius: BorderRadius.circular(12),
                       border: isSelected
                           ? null
-                          : Border.all(color: Colors.grey.withOpacity(0.2)),
+                          : Border.all(
+                              color: Colors.grey.withValues(alpha: 0.2),
+                            ),
                     ),
                     child: Text(
                       day,
@@ -218,7 +220,7 @@ class _StaffLessonPlannerPageState extends State<StaffLessonPlannerPage> {
             Container(
               width: 1,
               height: 80,
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.grey.withValues(alpha: 0.2),
               margin: const EdgeInsets.symmetric(vertical: 4),
             ),
           ],
@@ -234,7 +236,7 @@ class _StaffLessonPlannerPageState extends State<StaffLessonPlannerPage> {
               border: Border(left: BorderSide(color: color, width: 4)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),

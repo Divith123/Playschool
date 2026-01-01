@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/widgets/primary_button.dart';
 import 'package:playschool/widgets/search_bar.dart';
 
 class ParentSchoolStoreMarketplacePage extends StatefulWidget {
@@ -214,7 +213,7 @@ class _ParentSchoolStoreMarketplacePageState
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -248,7 +247,7 @@ class _ParentSchoolStoreMarketplacePageState
                       vertical: 2,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.7),
+                      color: Colors.black.withValues(alpha: 0.7),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Row(

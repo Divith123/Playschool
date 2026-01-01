@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffActivityPage extends StatefulWidget {
@@ -78,7 +78,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                     vertical: 12,
                   ),
                   decoration: BoxDecoration(
-                    color: bgColor.withOpacity(0.95),
+                    color: bgColor.withValues(alpha: 0.95),
                     border: Border(
                       bottom: BorderSide(
                         color: isDarkMode ? Colors.white10 : Colors.grey[200]!,
@@ -107,7 +107,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                       TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom(
-                          backgroundColor: primary.withOpacity(0.1),
+                          backgroundColor: primary.withValues(alpha: 0.1),
                           padding: const EdgeInsets.symmetric(
                             horizontal: 12,
                             vertical: 6,
@@ -145,7 +145,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             itemCount: children.length + 1,
-                            separatorBuilder: (_, __) =>
+                            separatorBuilder: (context, index) =>
                                 const SizedBox(width: 24),
                             itemBuilder: (context, index) {
                               if (index == children.length) {
@@ -235,7 +235,9 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                                   ? null
                                   : [
                                       BoxShadow(
-                                        color: Colors.black.withOpacity(0.02),
+                                        color: Colors.black.withValues(
+                                          alpha: 0.02,
+                                        ),
                                         blurRadius: 4,
                                       ),
                                     ],
@@ -252,8 +254,8 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                                           padding: const EdgeInsets.all(8),
                                           decoration: BoxDecoration(
                                             color: Colors.green[100]!
-                                                .withOpacity(
-                                                  isDarkMode ? 0.3 : 1,
+                                                .withValues(
+                                                  alpha: isDarkMode ? 0.3 : 1,
                                                 ),
                                             shape: BoxShape.circle,
                                           ),
@@ -355,8 +357,8 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                                     Container(
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: Colors.indigo[100]!.withOpacity(
-                                          isDarkMode ? 0.3 : 1,
+                                        color: Colors.indigo[100]!.withValues(
+                                          alpha: isDarkMode ? 0.3 : 1,
                                         ),
                                         shape: BoxShape.circle,
                                       ),
@@ -477,7 +479,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                                                   style: GoogleFonts.lexend(
                                                     fontWeight: FontWeight.bold,
                                                     color: subTextColor
-                                                        .withOpacity(0.5),
+                                                        .withValues(alpha: 0.5),
                                                   ),
                                                 ),
                                                 Icon(
@@ -519,8 +521,8 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                                     Container(
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: Colors.orange[100]!.withOpacity(
-                                          isDarkMode ? 0.3 : 1,
+                                        color: Colors.orange[100]!.withValues(
+                                          alpha: isDarkMode ? 0.3 : 1,
                                         ),
                                         shape: BoxShape.circle,
                                       ),
@@ -697,7 +699,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: bgColor.withOpacity(0.9),
+                color: bgColor.withValues(alpha: 0.9),
                 border: Border(
                   top: BorderSide(
                     color: isDarkMode ? Colors.white10 : Colors.grey[200]!,
@@ -769,7 +771,9 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
         height: 40,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isDarkMode ? Colors.white10 : Colors.black.withOpacity(0.05),
+          color: isDarkMode
+              ? Colors.white10
+              : Colors.black.withValues(alpha: 0.05),
         ),
         child: Icon(
           icon,
@@ -813,7 +817,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                   ? Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(0.4),
+                        color: Colors.white.withValues(alpha: 0.4),
                       ),
                     )
                   : null,
@@ -875,7 +879,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
     return Container(
       decoration: BoxDecoration(
         color: isActive
-            ? primary.withOpacity(isDarkMode ? 0.2 : 0.2)
+            ? primary.withValues(alpha: isDarkMode ? 0.2 : 0.2)
             : (isDarkMode ? surfaceDark : surfaceLight),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
@@ -885,7 +889,12 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
         ),
         boxShadow: isActive || isDarkMode
             ? null
-            : [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 4)],
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.02),
+                  blurRadius: 4,
+                ),
+              ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -928,7 +937,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
             boxShadow: isSelected
                 ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                     ),
                   ]
@@ -970,12 +979,12 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
             color: isSelected
-                ? color[50]!.withOpacity(isDarkMode ? 0.2 : 1)
+                ? color[50]!.withValues(alpha: isDarkMode ? 0.2 : 1)
                 : (isDarkMode ? Colors.transparent : Colors.white),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected
-                  ? color[200]!.withOpacity(isDarkMode ? 0.5 : 1)
+                  ? color[200]!.withValues(alpha: isDarkMode ? 0.5 : 1)
                   : (isDarkMode ? Colors.white10 : Colors.grey[200]!),
             ),
           ),
@@ -990,7 +999,7 @@ class _StaffActivityPageState extends State<StaffActivityPage> {
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: isSelected
-                      ? color[700]!.withOpacity(isDarkMode ? 0.9 : 1)
+                      ? color[700]!.withValues(alpha: isDarkMode ? 0.9 : 1)
                       : (isDarkMode ? Colors.grey[300] : Colors.grey[600]),
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 
 enum StatusType { success, warning, error, info, neutral }
@@ -87,9 +87,9 @@ class StatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: bgColor.withOpacity(isDarkMode ? 0.3 : 1.0),
+        color: bgColor.withValues(alpha: isDarkMode ? 0.3 : 1.0),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: textColor.withOpacity(0.2)),
+        border: Border.all(color: textColor.withValues(alpha: 0.2)),
       ),
       child: Text(
         displayLabel,

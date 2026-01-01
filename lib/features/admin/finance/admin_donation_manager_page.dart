@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/widgets/primary_button.dart';
 import 'package:playschool/widgets/search_bar.dart';
 
 class AdminDonationManagerPage extends StatefulWidget {
@@ -94,7 +93,7 @@ class _AdminDonationManagerPageState extends State<AdminDonationManagerPage> {
                     Text(
                       'Total Raised (FY 2025)',
                       style: GoogleFonts.lexend(
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                       ),
                     ),
                     Text(
@@ -110,7 +109,7 @@ class _AdminDonationManagerPageState extends State<AdminDonationManagerPage> {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
@@ -158,9 +157,9 @@ class _AdminDonationManagerPageState extends State<AdminDonationManagerPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 8),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 8),
         ],
       ),
       child: Column(
@@ -210,7 +209,7 @@ class _AdminDonationManagerPageState extends State<AdminDonationManagerPage> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.orange.withOpacity(0.1),
+                    color: Colors.orange.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -236,7 +235,7 @@ class _AdminDonationManagerPageState extends State<AdminDonationManagerPage> {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.success.withOpacity(0.1),
+                        color: AppColors.success.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(

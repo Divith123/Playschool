@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -90,7 +90,10 @@ class _ParentBirthdayPartyPlannerPageState
                   firstDate: DateTime.now(),
                   lastDate: DateTime.now().add(const Duration(days: 365)),
                 );
-                if (d != null) setState(() => _selectedDate = d);
+                if (d != null) {
+                  if (!context.mounted) return;
+                  setState(() => _selectedDate = d);
+                }
               },
               borderRadius: BorderRadius.circular(12),
               child: Container(
@@ -98,7 +101,9 @@ class _ParentBirthdayPartyPlannerPageState
                 decoration: BoxDecoration(
                   color: surfaceColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.primary.withOpacity(0.3)),
+                  border: Border.all(
+                    color: AppColors.primary.withValues(alpha: 0.3),
+                  ),
                 ),
                 child: Row(
                   children: [
@@ -144,7 +149,7 @@ class _ParentBirthdayPartyPlannerPageState
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? AppColors.primary.withOpacity(0.1)
+                            ? AppColors.primary.withValues(alpha: 0.1)
                             : surfaceColor,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
@@ -160,7 +165,7 @@ class _ParentBirthdayPartyPlannerPageState
                           Container(
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                              color: theme['color'].withOpacity(0.2),
+                              color: theme['color'].withValues(alpha: 0.2),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
@@ -210,18 +215,23 @@ class _ParentBirthdayPartyPlannerPageState
                       border: Border.all(
                         color: isSelected
                             ? AppColors.primary
-                            : Colors.grey.withOpacity(0.1),
+                            : Colors.grey.withValues(alpha: 0.1),
                         width: isSelected ? 2 : 1,
                       ),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Radio(
-                          value: pkg['name'],
+                        Radio<String>(
+                          value: pkg['name'] as String,
+                          // ignore: deprecated_member_use
                           groupValue: _selectedPackage,
-                          onChanged: (val) =>
-                              setState(() => _selectedPackage = val as String),
+                          // ignore: deprecated_member_use
+                          onChanged: (val) {
+                            if (val != null) {
+                              setState(() => _selectedPackage = val);
+                            }
+                          },
                           activeColor: AppColors.primary,
                         ),
                         Expanded(

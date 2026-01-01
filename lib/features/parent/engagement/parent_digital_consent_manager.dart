@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -88,13 +88,13 @@ class _ParentDigitalConsentManagerPageState
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
                 color: isPending
-                    ? Colors.orange.withOpacity(0.5)
+                    ? Colors.orange.withValues(alpha: 0.5)
                     : Colors.transparent,
                 width: isPending ? 1.5 : 1,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -238,15 +238,15 @@ class _ParentDigitalConsentManagerPageState
                     height: 80,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
+                      border: Border.all(color: Colors.grey.withValues(alpha: 0.3)),
                       borderRadius: BorderRadius.circular(8),
-                      color: Colors.grey.withOpacity(0.05),
+                      color: Colors.grey.withValues(alpha: 0.05),
                     ),
                     child: Center(
                       child: Text(
                         '(Tap to Simulate Signature)',
                         style: GoogleFonts.lexend(
-                          color: Colors.grey.withOpacity(0.5),
+                          color: Colors.grey.withValues(alpha: 0.5),
                           fontSize: 10,
                         ),
                       ),

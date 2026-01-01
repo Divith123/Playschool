@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -18,9 +18,7 @@ class _AdminStorageManagerPageState extends State<AdminStorageManagerPage> {
     final bgColor = isDarkMode
         ? AppColors.backgroundDark
         : AppColors.backgroundLight;
-    final surfaceColor = isDarkMode
-        ? AppColors.surfaceDark
-        : AppColors.surfaceLight;
+
     final textColor = isDarkMode
         ? AppColors.textMainDark
         : AppColors.textMainLight;
@@ -50,7 +48,7 @@ class _AdminStorageManagerPageState extends State<AdminStorageManagerPage> {
                   child: CircularProgressIndicator(
                     value: 0.75,
                     strokeWidth: 20,
-                    backgroundColor: Colors.grey.withOpacity(0.2),
+                    backgroundColor: Colors.grey.withValues(alpha: 0.2),
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
                   ),
                 ),

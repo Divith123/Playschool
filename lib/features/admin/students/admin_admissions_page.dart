@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:playschool/features/admin/students/admin_admission_form_page.dart';
 import 'package:playschool/features/admin/students/admin_student_profile_page.dart';
@@ -39,11 +39,11 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: bgColor.withOpacity(0.95),
+                color: bgColor.withValues(alpha: 0.95),
                 border: Border(
                   bottom: BorderSide(
                     color: isDarkMode
-                        ? Colors.white.withOpacity(0.05)
+                        ? Colors.white.withValues(alpha: 0.05)
                         : Colors.transparent,
                   ),
                 ),
@@ -99,7 +99,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
+                                  color: Colors.black.withValues(alpha: 0.05),
                                   blurRadius: 2,
                                 ),
                               ],
@@ -125,7 +125,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: primary.withOpacity(0.3),
+                                    color: primary.withValues(alpha: 0.3),
                                     blurRadius: 6,
                                     offset: const Offset(0, 2),
                                   ),
@@ -160,7 +160,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withValues(alpha: 0.05),
                             blurRadius: 2,
                           ),
                         ],
@@ -411,14 +411,14 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
               ? null
               : Border.all(
                   color: isDarkMode
-                      ? Colors.white.withOpacity(0.1)
+                      ? Colors.white.withValues(alpha: 0.1)
                       : Colors.transparent,
                 ),
           boxShadow: isSelected
               ? []
               : [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 2,
                   ),
                 ],
@@ -475,13 +475,13 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: 0.04),
               offset: const Offset(0, 2),
               blurRadius: 8,
             ),
           ],
           border: isDarkMode
-              ? Border.all(color: Colors.white.withOpacity(0.05))
+              ? Border.all(color: Colors.white.withValues(alpha: 0.05))
               : null,
         ),
         child: Opacity(
@@ -502,7 +502,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                             shape: BoxShape.circle,
                             border: Border.all(
                               color: isDarkMode
-                                  ? Colors.white.withOpacity(0.1)
+                                  ? Colors.white.withValues(alpha: 0.1)
                                   : Colors.white,
                               width: 2,
                             ),
@@ -520,14 +520,14 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: isDarkMode
-                                ? (initialsColor?.withOpacity(0.2) ??
+                                ? (initialsColor?.withValues(alpha: 0.2) ??
                                       Colors.blue[900])
-                                : (initialsColor?.withOpacity(0.1) ??
+                                : (initialsColor?.withValues(alpha: 0.1) ??
                                       Colors.blue[100]),
                             shape: BoxShape.circle,
                             border: Border.all(
                               color: isDarkMode
-                                  ? Colors.white.withOpacity(0.1)
+                                  ? Colors.white.withValues(alpha: 0.1)
                                   : Colors.white,
                               width: 2,
                             ),
@@ -582,7 +582,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: statusColor.withOpacity(isDarkMode ? 0.2 : 0.1),
+                      color: statusColor.withValues(alpha: isDarkMode ? 0.2 : 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Row(
@@ -609,7 +609,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: isDarkMode
-                        ? Colors.black.withOpacity(0.2)
+                        ? Colors.black.withValues(alpha: 0.2)
                         : backgroundLight,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: Colors.transparent),
@@ -663,9 +663,9 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: primary.withOpacity(isDarkMode ? 0.1 : 0.1),
+                    color: primary.withValues(alpha: isDarkMode ? 0.1 : 0.1),
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: primary.withOpacity(0.2)),
+                    border: Border.all(color: primary.withValues(alpha: 0.2)),
                   ),
                   child: Row(
                     children: [
@@ -744,7 +744,7 @@ class _AdminAdmissionsPageState extends State<AdminAdmissionsPage> {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: isDarkMode
-                  ? primary.withOpacity(0.2)
+                  ? primary.withValues(alpha: 0.2)
                   : const Color(0xFFe7f3eb),
               shape: BoxShape.circle,
             ),

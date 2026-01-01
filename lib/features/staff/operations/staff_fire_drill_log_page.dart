@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -55,7 +55,7 @@ class _StaffFireDrillLogPageState extends State<StaffFireDrillLogPage> {
                   border: Border.all(color: AppColors.primary, width: 4),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.primary.withOpacity(0.3),
+                      color: AppColors.primary.withValues(alpha: 0.3),
                       blurRadius: 20,
                     ),
                   ],
@@ -82,7 +82,7 @@ class _StaffFireDrillLogPageState extends State<StaffFireDrillLogPage> {
 
             _buildLabel('Drill Type', textColor),
             DropdownButtonFormField<String>(
-              value: _drillType,
+              initialValue: _drillType,
               dropdownColor: surfaceColor,
               style: TextStyle(color: textColor),
               decoration: _buildInputDeco(surfaceColor),
@@ -115,7 +115,7 @@ class _StaffFireDrillLogPageState extends State<StaffFireDrillLogPage> {
               decoration: BoxDecoration(
                 color: surfaceColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
               ),
               child: Row(
                 children: [

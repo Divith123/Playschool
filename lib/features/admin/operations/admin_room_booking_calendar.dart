@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/widgets/primary_button.dart';
 
 class AdminRoomBookingCalendarPage extends StatefulWidget {
   const AdminRoomBookingCalendarPage({super.key});
@@ -13,9 +12,6 @@ class AdminRoomBookingCalendarPage extends StatefulWidget {
 
 class _AdminRoomBookingCalendarPageState
     extends State<AdminRoomBookingCalendarPage> {
-  DateTime _selectedDate = DateTime.now();
-  String _selectedRoom = 'AV Room';
-
   // Mock time slots
   final Map<String, String> _slots = {
     '09:00 AM': 'Available',
@@ -117,8 +113,8 @@ class _AdminRoomBookingCalendarPageState
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: isBooked
-                          ? Colors.red.withOpacity(0.3)
-                          : AppColors.success.withOpacity(0.3),
+                          ? Colors.red.withValues(alpha: 0.3)
+                          : AppColors.success.withValues(alpha: 0.3),
                     ),
                   ),
                   child: Row(

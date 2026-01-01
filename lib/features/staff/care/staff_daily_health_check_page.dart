@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 import 'package:playschool/widgets/student_card.dart';
@@ -84,9 +84,9 @@ class _StaffDailyHealthCheckPageState extends State<StaffDailyHealthCheckPage> {
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: color.withOpacity(0.5)),
+          border: Border.all(color: color.withValues(alpha: 0.5)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -178,7 +178,7 @@ class _StaffDailyHealthCheckPageState extends State<StaffDailyHealthCheckPage> {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: isSelected ? Colors.red.withOpacity(0.2) : Colors.grey[200],
+        color: isSelected ? Colors.red.withValues(alpha: 0.2) : Colors.grey[200],
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: isSelected ? Colors.red : Colors.transparent),
       ),

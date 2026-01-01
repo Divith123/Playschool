@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -96,7 +96,7 @@ class _AdminSchoolWebsiteCmsPageState extends State<AdminSchoolWebsiteCmsPage> {
               ),
               trailing: Switch(
                 value: true,
-                activeColor: AppColors.primary,
+                activeThumbColor: AppColors.primary,
                 onChanged: (v) {},
               ),
               leading: Icon(Icons.campaign, color: AppColors.primary),

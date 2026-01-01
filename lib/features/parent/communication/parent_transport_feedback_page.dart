@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -88,13 +88,14 @@ class _ParentTransportFeedbackPageState
                   selected: isSelected,
                   onSelected: (val) {
                     setState(() {
-                      if (val)
+                      if (val) {
                         _selectedTags.add(tag);
-                      else
+                      } else {
                         _selectedTags.remove(tag);
+                      }
                     });
                   },
-                  selectedColor: AppColors.primary.withOpacity(0.3),
+                  selectedColor: AppColors.primary.withValues(alpha: 0.3),
                   checkmarkColor: AppColors.primary,
                 );
               }).toList(),

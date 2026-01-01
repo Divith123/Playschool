@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PublicEnquiryPage extends StatefulWidget {
@@ -44,7 +44,7 @@ class _PublicEnquiryPageState extends State<PublicEnquiryPage> {
                       width: 80,
                       height: 80,
                       decoration: BoxDecoration(
-                        color: primary.withOpacity(0.2),
+                        color: primary.withValues(alpha: 0.2),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -83,7 +83,7 @@ class _PublicEnquiryPageState extends State<PublicEnquiryPage> {
                   borderRadius: BorderRadius.circular(24),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -270,7 +270,7 @@ class _PublicEnquiryPageState extends State<PublicEnquiryPage> {
     bool isDarkMode,
   ) {
     var borderColor = isDarkMode
-        ? Colors.white.withOpacity(0.1)
+        ? Colors.white.withValues(alpha: 0.1)
         : Colors.grey[200]!;
     return InputDecoration(
       labelText: label,
@@ -282,7 +282,7 @@ class _PublicEnquiryPageState extends State<PublicEnquiryPage> {
         color: isDarkMode ? Colors.grey[400] : Colors.grey[500],
       ),
       filled: true,
-      fillColor: isDarkMode ? Colors.black.withOpacity(0.2) : Colors.grey[50]!,
+      fillColor: isDarkMode ? Colors.black.withValues(alpha: 0.2) : Colors.grey[50]!,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide(color: borderColor),

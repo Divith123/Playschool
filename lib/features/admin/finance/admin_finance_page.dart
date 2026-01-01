@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:playschool/features/admin/finance/admin_expense_tracker_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -322,7 +322,7 @@ class AdminFinancePage extends StatelessWidget {
                     right: 16,
                   ),
                   decoration: BoxDecoration(
-                    color: bgColor.withOpacity(0.95),
+                    color: bgColor.withValues(alpha: 0.95),
                     border: Border(bottom: BorderSide(color: borderColor)),
                   ),
                   child: Row(
@@ -375,7 +375,7 @@ class AdminFinancePage extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.blue.withOpacity(0.4),
+                    color: Colors.blue.withValues(alpha: 0.4),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -444,7 +444,7 @@ class AdminFinancePage extends StatelessWidget {
         border: Border.all(color: borderColor),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 2,
             offset: const Offset(0, 1),
           ),
@@ -459,8 +459,8 @@ class AdminFinancePage extends StatelessWidget {
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: isDarkMode
-                      ? iconBgBase.withOpacity(0.3)
-                      : iconBgBase.withOpacity(0.1),
+                      ? iconBgBase.withValues(alpha: 0.3)
+                      : iconBgBase.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(icon, size: 16, color: primaryColor),
@@ -517,7 +517,7 @@ class AdminFinancePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -532,7 +532,7 @@ class AdminFinancePage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
@@ -587,7 +587,7 @@ class AdminFinancePage extends StatelessWidget {
           border: Border.all(color: borderColor),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 2,
               offset: const Offset(0, 1),
             ),
@@ -600,8 +600,8 @@ class AdminFinancePage extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: isDarkMode
-                    ? color.withOpacity(0.3)
-                    : color.withOpacity(0.1),
+                    ? color.withValues(alpha: 0.3)
+                    : color.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: color, size: 20),
@@ -636,8 +636,8 @@ class AdminFinancePage extends StatelessWidget {
     String imageUrl,
   ) {
     // Override colors for dark mode chips if needed
-    final chipBg = isDarkMode ? statusText.withOpacity(0.2) : statusBg;
-    final chipText = isDarkMode ? statusText.withOpacity(0.8) : statusText;
+    final chipBg = isDarkMode ? statusText.withValues(alpha: 0.2) : statusBg;
+    final chipText = isDarkMode ? statusText.withValues(alpha: 0.8) : statusText;
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -647,7 +647,7 @@ class AdminFinancePage extends StatelessWidget {
         border: Border.all(color: borderColor),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 2,
             offset: const Offset(0, 1),
           ),
@@ -713,7 +713,7 @@ class AdminFinancePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: chipBg,
                         borderRadius: BorderRadius.circular(6),
-                        border: Border.all(color: chipText.withOpacity(0.1)),
+                        border: Border.all(color: chipText.withValues(alpha: 0.1)),
                       ),
                       child: Text(
                         status,

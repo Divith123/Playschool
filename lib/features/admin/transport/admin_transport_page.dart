@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminTransportPage extends StatefulWidget {
@@ -30,7 +30,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
     final textColor = isDarkMode ? textMainDark : textMainLight;
     final subTextColor = isDarkMode ? textSubDark : textSubLight;
     final borderColor = isDarkMode
-        ? Colors.white.withOpacity(0.05)
+        ? Colors.white.withValues(alpha: 0.05)
         : Colors.grey[100]!;
 
     return Scaffold(
@@ -51,8 +51,8 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                   ),
                   decoration: BoxDecoration(
                     color: isDarkMode
-                        ? backgroundDark.withOpacity(0.95)
-                        : backgroundLight.withOpacity(0.95),
+                        ? backgroundDark.withValues(alpha: 0.95)
+                        : backgroundLight.withValues(alpha: 0.95),
                     border: Border(bottom: BorderSide(color: borderColor)),
                   ),
                   child: Row(
@@ -91,7 +91,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: primary.withOpacity(0.3),
+                              color: primary.withValues(alpha: 0.3),
                               blurRadius: 4,
                               offset: const Offset(0, 2),
                             ),
@@ -118,7 +118,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                                 icon: Icons.directions_bus,
                                 iconColor: Colors.blue[600]!,
                                 iconBg: isDarkMode
-                                    ? Colors.blue[900]!.withOpacity(0.3)
+                                    ? Colors.blue[900]!.withValues(alpha: 0.3)
                                     : Colors.blue[100]!,
                                 surfaceColor: surfaceColor,
                                 textColor: textColor,
@@ -132,7 +132,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                                 icon: Icons.school,
                                 iconColor: Colors.orange[600]!,
                                 iconBg: isDarkMode
-                                    ? Colors.orange[900]!.withOpacity(0.3)
+                                    ? Colors.orange[900]!.withValues(alpha: 0.3)
                                     : Colors.orange[100]!,
                                 surfaceColor: surfaceColor,
                                 textColor: textColor,
@@ -145,7 +145,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                                 label: 'On Time',
                                 icon: Icons.schedule,
                                 iconColor: Colors.green[700]!,
-                                iconBg: primary.withOpacity(0.2),
+                                iconBg: primary.withValues(alpha: 0.2),
                                 surfaceColor: surfaceColor,
                                 textColor: textColor,
                                 subTextColor: subTextColor,
@@ -166,7 +166,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                               border: Border.all(color: borderColor),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.01),
+                                  color: Colors.black.withValues(alpha: 0.01),
                                   blurRadius: 2,
                                   offset: const Offset(0, 1),
                                 ),
@@ -191,7 +191,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                                     decoration: InputDecoration(
                                       hintText: 'Search route, driver...',
                                       hintStyle: GoogleFonts.lexend(
-                                        color: subTextColor.withOpacity(0.7),
+                                        color: subTextColor.withValues(alpha: 0.7),
                                       ),
                                       border: InputBorder.none,
                                     ),
@@ -352,7 +352,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: primary.withOpacity(0.4),
+                      color: primary.withValues(alpha: 0.4),
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),
@@ -374,8 +374,8 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                 ),
                 decoration: BoxDecoration(
                   color: isDarkMode
-                      ? backgroundDark.withOpacity(0.95)
-                      : surfaceLight.withOpacity(0.95),
+                      ? backgroundDark.withValues(alpha: 0.95)
+                      : surfaceLight.withValues(alpha: 0.95),
                   border: Border(top: BorderSide(color: borderColor)),
                 ),
                 child: SafeArea(
@@ -423,7 +423,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
           border: Border.all(color: borderColor),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.01),
+              color: Colors.black.withValues(alpha: 0.01),
               blurRadius: 2,
               offset: const Offset(0, 1),
             ),
@@ -476,7 +476,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
         : (isDarkMode ? surfaceColor : Colors.white);
     final borderColor = isActive
         ? Colors.transparent
-        : (isDarkMode ? Colors.white.withOpacity(0.1) : Colors.grey[200]!);
+        : (isDarkMode ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200]!);
     final textColor = isActive ? backgroundDark : textSubColor;
     final fontWeight = isActive ? FontWeight.bold : FontWeight.w500;
 
@@ -489,7 +489,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
         boxShadow: isActive
             ? [
                 BoxShadow(
-                  color: primary.withOpacity(0.2),
+                  color: primary.withValues(alpha: 0.2),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
@@ -530,12 +530,12 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Container(
         decoration: BoxDecoration(
-          color: surfaceColor.withOpacity(isMaintenance ? 0.8 : 1.0),
+          color: surfaceColor.withValues(alpha: isMaintenance ? 0.8 : 1.0),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: borderColor),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.01),
+              color: Colors.black.withValues(alpha: 0.01),
               blurRadius: 2,
               offset: const Offset(0, 1),
             ),
@@ -582,8 +582,8 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                                   ),
                                   decoration: BoxDecoration(
                                     color: isDarkMode
-                                        ? statusColor.withOpacity(0.2)
-                                        : statusColor.withOpacity(0.1),
+                                        ? statusColor.withValues(alpha: 0.2)
+                                        : statusColor.withValues(alpha: 0.1),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: Text(
@@ -740,7 +740,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
                             ),
                             decoration: BoxDecoration(
                               color: isDarkMode
-                                  ? Colors.grey[800]!.withOpacity(0.5)
+                                  ? Colors.grey[800]!.withValues(alpha: 0.5)
                                   : Colors.grey[50],
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -889,7 +889,7 @@ class _AdminTransportPageState extends State<AdminTransportPage> {
         boxShadow: isRing
             ? [
                 BoxShadow(
-                  color: color.withOpacity(0.2),
+                  color: color.withValues(alpha: 0.2),
                   blurRadius: 0,
                   spreadRadius: 4,
                 ),

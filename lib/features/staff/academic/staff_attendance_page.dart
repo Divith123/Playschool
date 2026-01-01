@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffAttendancePage extends StatefulWidget {
@@ -42,7 +42,7 @@ class _StaffAttendancePageState extends State<StaffAttendancePage> {
                     horizontal: 16,
                     vertical: 8,
                   ),
-                  color: bgColor.withOpacity(0.95),
+                  color: bgColor.withValues(alpha: 0.95),
                   child: Column(
                     children: [
                       Row(
@@ -135,9 +135,9 @@ class _StaffAttendancePageState extends State<StaffAttendancePage> {
                                       label: 'Checked In',
                                       value: '12',
                                       bgColor: isDarkMode
-                                          ? primary.withOpacity(0.1)
-                                          : primary.withOpacity(0.2),
-                                      borderColor: primary.withOpacity(0.2),
+                                          ? primary.withValues(alpha: 0.1)
+                                          : primary.withValues(alpha: 0.2),
+                                      borderColor: primary.withValues(alpha: 0.2),
                                       textColor: textColor,
                                       labelColor: isDarkMode
                                           ? Colors.blueGrey[300]!
@@ -224,7 +224,7 @@ class _StaffAttendancePageState extends State<StaffAttendancePage> {
                                     borderRadius: BorderRadius.circular(12),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.black.withOpacity(0.05),
+                                        color: Colors.black.withValues(alpha: 0.05),
                                         blurRadius: 2,
                                       ),
                                     ],
@@ -337,7 +337,7 @@ class _StaffAttendancePageState extends State<StaffAttendancePage> {
                   borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
-                      color: primary.withOpacity(0.25),
+                      color: primary.withValues(alpha: 0.25),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -471,7 +471,7 @@ class _StaffAttendancePageState extends State<StaffAttendancePage> {
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 2,
                   ),
                 ]
@@ -509,13 +509,13 @@ class _StaffAttendancePageState extends State<StaffAttendancePage> {
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: isAbsent ? surfaceColor.withOpacity(0.6) : surfaceColor,
+          color: isAbsent ? surfaceColor.withValues(alpha: 0.6) : surfaceColor,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: Colors.transparent),
           boxShadow: [
             if (!isAbsent)
               BoxShadow(
-                color: Colors.black.withOpacity(0.02),
+                color: Colors.black.withValues(alpha: 0.02),
                 blurRadius: 4,
                 offset: const Offset(0, 2),
               ),

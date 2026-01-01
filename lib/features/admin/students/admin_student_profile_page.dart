@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/staff/operations/staff_incident_report_page.dart';
@@ -26,7 +26,7 @@ class AdminStudentProfilePage extends StatelessWidget {
     final borderColor = isDarkMode
         ? const Color(0xFF1e293b)
         : const Color(0xFFe2e8f0);
-    ; // slate-800 : slate-200
+// slate-800 : slate-200
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -41,14 +41,14 @@ class AdminStudentProfilePage extends StatelessWidget {
                 left: 16,
                 right: 16,
               ),
-              color: bgColor.withOpacity(0.95),
+              color: bgColor.withValues(alpha: 0.95),
               child: ClipRect(
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       border: Border(
-                        bottom: BorderSide(color: borderColor.withOpacity(0.5)),
+                        bottom: BorderSide(color: borderColor.withValues(alpha: 0.5)),
                       ),
                     ),
                     padding: const EdgeInsets.only(bottom: 8),
@@ -121,7 +121,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -145,7 +145,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 4,
                               offset: const Offset(0, 2),
                             ),
@@ -265,12 +265,12 @@ class AdminStudentProfilePage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: isDarkMode
-                    ? const Color(0xFF450a0a).withOpacity(0.3)
+                    ? const Color(0xFF450a0a).withValues(alpha: 0.3)
                     : const Color(0xFFfef2f2), // red-50 / red-900/10
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: isDarkMode
-                      ? const Color(0xFF7f1d1d).withOpacity(0.3)
+                      ? const Color(0xFF7f1d1d).withValues(alpha: 0.3)
                       : const Color(0xFFfee2e2), // red-100 / red-900/30
                 ),
               ),
@@ -324,7 +324,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                       border: Border(
                         top: BorderSide(
                           color: isDarkMode
-                              ? const Color(0xFF7f1d1d).withOpacity(0.3)
+                              ? const Color(0xFF7f1d1d).withValues(alpha: 0.3)
                               : Colors.red[100]!,
                         ),
                       ),
@@ -339,7 +339,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                               height: 32,
                               decoration: BoxDecoration(
                                 color: isDarkMode
-                                    ? const Color(0xFF7f1d1d).withOpacity(0.4)
+                                    ? const Color(0xFF7f1d1d).withValues(alpha: 0.4)
                                     : Colors.red[100],
                                 shape: BoxShape.circle,
                               ),
@@ -361,8 +361,8 @@ class AdminStudentProfilePage extends StatelessWidget {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
                                     color: isDarkMode
-                                        ? Colors.red[300]?.withOpacity(0.7)
-                                        : Colors.red[700]?.withOpacity(0.7),
+                                        ? Colors.red[300]?.withValues(alpha: 0.7)
+                                        : Colors.red[700]?.withValues(alpha: 0.7),
                                   ),
                                 ),
                                 Text(
@@ -394,7 +394,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.05),
+                                color: Colors.black.withValues(alpha: 0.05),
                                 blurRadius: 2,
                               ),
                             ],
@@ -426,7 +426,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                 border: Border.all(color: borderColor),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     offset: const Offset(0, 1),
                     blurRadius: 2,
                   ),
@@ -483,7 +483,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                 border: Border.all(color: borderColor),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     offset: const Offset(0, 1),
                     blurRadius: 2,
                   ),
@@ -565,7 +565,7 @@ class AdminStudentProfilePage extends StatelessWidget {
                 border: Border.all(color: borderColor),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     offset: const Offset(0, 1),
                     blurRadius: 2,
                   ),
@@ -650,7 +650,7 @@ class AdminStudentProfilePage extends StatelessWidget {
               border: border ? Border.all(color: borderColor!) : null,
               boxShadow: [
                 BoxShadow(
-                  color: bg.withOpacity(0.2),
+                  color: bg.withValues(alpha: 0.2),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -682,7 +682,7 @@ class AdminStudentProfilePage extends StatelessWidget {
   }) {
     final bgColor = isBlue
         ? (isDarkMode
-              ? const Color(0xFF1e3a8a).withOpacity(0.2)
+              ? const Color(0xFF1e3a8a).withValues(alpha: 0.2)
               : Colors.blue[50]) // blue-900/20 : blue-50
         : (isDarkMode
               ? const Color(0xFF450a0a)
@@ -690,7 +690,7 @@ class AdminStudentProfilePage extends StatelessWidget {
 
     final borderColor = isBlue
         ? (isDarkMode
-              ? const Color(0xFF1e40af).withOpacity(0.5)
+              ? const Color(0xFF1e40af).withValues(alpha: 0.5)
               : Colors.blue[100]) // blue-800/50 : blue-100
         : (isDarkMode
               ? const Color(0xFF991b1b)
@@ -748,7 +748,7 @@ class AdminStudentProfilePage extends StatelessWidget {
               border: Border(
                 bottom: BorderSide(
                   color: isDarkMode
-                      ? const Color(0xFF334155).withOpacity(0.5)
+                      ? const Color(0xFF334155).withValues(alpha: 0.5)
                       : const Color(0xFFf1f5f9),
                 ),
               ),
@@ -807,7 +807,7 @@ class AdminStudentProfilePage extends StatelessWidget {
               _buildSmallIconButton(
                 Icons.call,
                 isDarkMode,
-                primary.withOpacity(0.2),
+                primary.withValues(alpha: 0.2),
                 isDarkMode ? Colors.green[300] : Colors.green[700],
               ),
             ],
@@ -854,7 +854,7 @@ class AdminStudentProfilePage extends StatelessWidget {
               width: 2,
             ),
             boxShadow: [
-              BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 2),
+              BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 2),
             ],
           ),
         ),
@@ -922,7 +922,7 @@ class AdminStudentProfilePage extends StatelessWidget {
     MaterialColor color,
     bool isDarkMode,
   ) {
-    final bg = isDarkMode ? color.shade900.withOpacity(0.3) : color.shade100;
+    final bg = isDarkMode ? color.shade900.withValues(alpha: 0.3) : color.shade100;
     final iconColor = isDarkMode ? color.shade400 : color.shade500;
 
     return Container(

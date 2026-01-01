@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -96,7 +96,7 @@ class _AdminTaxManagerPageState extends State<AdminTaxManagerPage> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
@@ -111,7 +111,7 @@ class _AdminTaxManagerPageState extends State<AdminTaxManagerPage> {
                   ),
                   Icon(
                     Icons.account_balance,
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                     size: 48,
                   ),
                 ],
@@ -156,7 +156,7 @@ class _AdminTaxManagerPageState extends State<AdminTaxManagerPage> {
                 decoration: BoxDecoration(
                   color: surfaceColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                  border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,7 +177,7 @@ class _AdminTaxManagerPageState extends State<AdminTaxManagerPage> {
                       decoration: BoxDecoration(
                         color: bgColor,
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                        border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
                       ),
                       child: Text(
                         '${e.value}%',

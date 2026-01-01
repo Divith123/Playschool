@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffMedicineLogPage extends StatefulWidget {
@@ -43,7 +43,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                   maxHeight: 80,
                   minHeight: 80,
                   child: Container(
-                    color: bgColor.withOpacity(0.95),
+                    color: bgColor.withValues(alpha: 0.95),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 16,
                       vertical: 8,
@@ -146,7 +146,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                               textColor: textColor,
                               subTextColor: subTextColor,
                               borderColor: isDarkMode
-                                  ? Colors.red.withOpacity(0.3)
+                                  ? Colors.red.withValues(alpha: 0.3)
                                   : Colors.red[100]!,
                               isUrgent: true,
                             ),
@@ -281,8 +281,8 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                                           ),
                                           boxShadow: [
                                             BoxShadow(
-                                              color: Colors.black.withOpacity(
-                                                0.05,
+                                              color: Colors.black.withValues(
+                                                alpha: 0.05,
                                               ),
                                               blurRadius: 2,
                                               offset: const Offset(0, 1),
@@ -340,8 +340,8 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                                           ),
                                           boxShadow: [
                                             BoxShadow(
-                                              color: Colors.black.withOpacity(
-                                                0.05,
+                                              color: Colors.black.withValues(
+                                                alpha: 0.05,
                                               ),
                                               blurRadius: 2,
                                               offset: const Offset(0, 1),
@@ -392,7 +392,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.05),
+                                    color: Colors.black.withValues(alpha: 0.05),
                                     blurRadius: 2,
                                     offset: const Offset(0, 1),
                                   ),
@@ -431,7 +431,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.05),
+                                    color: Colors.black.withValues(alpha: 0.05),
                                     blurRadius: 2,
                                     offset: const Offset(0, 1),
                                   ),
@@ -445,7 +445,9 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: isDarkMode
-                                          ? Colors.blue[900]!.withOpacity(0.3)
+                                          ? Colors.blue[900]!.withValues(
+                                              alpha: 0.3,
+                                            )
                                           : Colors.blue[50],
                                     ),
                                     child: Icon(
@@ -483,7 +485,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                                   Switch(
                                     value: false,
                                     onChanged: (val) {},
-                                    activeColor: primary,
+                                    activeThumbColor: primary,
                                   ),
                                 ],
                               ),
@@ -587,7 +589,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: bgColor.withOpacity(0.8),
+                color: bgColor.withValues(alpha: 0.8),
                 border: Border(
                   top: BorderSide(
                     color: isDarkMode ? Colors.grey[800]! : Colors.grey[200]!,
@@ -611,7 +613,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
                       fontWeight: FontWeight.bold,
                     ),
                     elevation: 5,
-                    shadowColor: primary.withOpacity(0.2),
+                    shadowColor: primary.withValues(alpha: 0.2),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -637,8 +639,8 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
         style: GoogleFonts.lexend(
           fontSize: 14,
           fontWeight: FontWeight.w500,
-          color: color.withOpacity(
-            isDarkMode(context) ? 0.9 : 1,
+          color: color.withValues(
+            alpha: isDarkMode(context) ? 0.9 : 1,
           ), // slightly softer for labels? No, design says font-medium text-dark-text
         ),
         children: optional
@@ -677,7 +679,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
         border: Border.all(color: borderColor),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 2,
             offset: const Offset(0, 1),
           ),
@@ -735,7 +737,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
         border: Border.all(color: borderColor),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 2,
             offset: const Offset(0, 1),
           ),
@@ -795,7 +797,7 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
         border: Border.all(color: borderColor),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 2,
             offset: const Offset(0, 1),
           ),
@@ -856,8 +858,8 @@ class _StaffMedicineLogPageState extends State<StaffMedicineLogPage> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
               color: isDarkMode(context)
-                  ? color.withOpacity(0.2)
-                  : color.withOpacity(0.1),
+                  ? color.withValues(alpha: 0.2)
+                  : color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(6),
             ),
             child: Row(

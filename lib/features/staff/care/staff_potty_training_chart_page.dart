@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/widgets/primary_button.dart';
 
 class StaffPottyTrainingChartPage extends StatefulWidget {
   const StaffPottyTrainingChartPage({super.key});
@@ -51,7 +50,7 @@ class _StaffPottyTrainingChartPageState
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.purple.withOpacity(0.2),
+                  backgroundColor: Colors.purple.withValues(alpha: 0.2),
                   child: Text('JS', style: TextStyle(color: Colors.purple)),
                 ),
                 const SizedBox(width: 12),
@@ -117,7 +116,7 @@ class _StaffPottyTrainingChartPageState
           onTap: () {
             setState(() {
               _records.insert(0, {
-                'time': '${TimeOfDay.now().format(context)}',
+                'time': TimeOfDay.now().format(context),
                 'type': label,
                 'success': label != 'Dry' ? true : false,
               });
@@ -127,9 +126,9 @@ class _StaffPottyTrainingChartPageState
             width: 80,
             height: 80,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               shape: BoxShape.circle,
-              border: Border.all(color: color.withOpacity(0.5), width: 2),
+              border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
             ),
             child: Icon(icon, color: color, size: 32),
           ),
@@ -152,7 +151,7 @@ class _StaffPottyTrainingChartPageState
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

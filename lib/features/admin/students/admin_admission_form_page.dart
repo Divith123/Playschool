@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -44,7 +44,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: bgColor.withOpacity(0.95),
+                color: bgColor.withValues(alpha: 0.95),
                 border: Border(bottom: BorderSide(color: borderColor)),
               ),
               child: ClipRect(
@@ -261,7 +261,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
                                   vertical: 2,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: primary.withOpacity(0.1),
+                                  color: primary.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Text(
@@ -288,7 +288,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
                                 'PDF or JPG up to 5MB',
                                 Icons.child_care,
                                 primary,
-                                primary.withOpacity(0.1),
+                                primary.withValues(alpha: 0.1),
                                 false,
                                 isDarkMode,
                                 borderColor,
@@ -302,7 +302,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
                                 'Uploaded',
                                 Icons.vaccines,
                                 Colors.green[600]!,
-                                Colors.green.withOpacity(0.1),
+                                Colors.green.withValues(alpha: 0.1),
                                 true,
                                 isDarkMode,
                                 borderColor,
@@ -316,7 +316,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
                                 'Government issued ID',
                                 Icons.badge,
                                 primary,
-                                primary.withOpacity(0.1),
+                                primary.withValues(alpha: 0.1),
                                 false,
                                 isDarkMode,
                                 borderColor,
@@ -400,7 +400,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
           border: Border(top: BorderSide(color: borderColor)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               offset: const Offset(0, -4),
               blurRadius: 6,
             ),
@@ -749,7 +749,7 @@ class _AdminAdmissionFormPageState extends State<AdminAdmissionFormPage> {
                   color: subTextColor,
                 ),
                 hoverColor: isDarkMode
-                    ? Colors.white.withOpacity(0.1)
+                    ? Colors.white.withValues(alpha: 0.1)
                     : backgroundLight,
               ),
             ),

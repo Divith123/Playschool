@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -24,9 +24,6 @@ class _ParentPortfolioDeepDivePageState
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final bgColor = isDarkMode
-        ? AppColors.backgroundDark
-        : AppColors.backgroundLight;
     final surfaceColor = isDarkMode
         ? AppColors.surfaceDark
         : AppColors.surfaceLight;
@@ -75,7 +72,7 @@ class _ParentPortfolioDeepDivePageState
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.black.withValues(alpha: 0.5),
                     blurRadius: 20,
                   ),
                 ],
@@ -131,7 +128,7 @@ class _ParentPortfolioDeepDivePageState
                     _teacherNote,
                     style: GoogleFonts.lexend(
                       fontSize: 14,
-                      color: textColor.withOpacity(0.8),
+                      color: textColor.withValues(alpha: 0.8),
                       height: 1.5,
                     ),
                   ),

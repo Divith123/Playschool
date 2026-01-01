@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,12 +57,12 @@ class ParentReferralProgramPage extends StatelessWidget {
                     : AppColors.surfaceLight,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: AppColors.primary.withOpacity(0.5),
+                  color: AppColors.primary.withValues(alpha: 0.5),
                   width: 2,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.1),
+                    color: AppColors.primary.withValues(alpha: 0.1),
                     blurRadius: 20,
                   ),
                 ],

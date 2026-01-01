@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentChatPage extends StatefulWidget {
@@ -40,7 +40,7 @@ class _ParentChatPageState extends State<ParentChatPage> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: surfaceColor.withOpacity(0.9),
+                color: surfaceColor.withValues(alpha: 0.9),
                 border: Border(bottom: BorderSide(color: borderColor)),
               ),
               child: Row(
@@ -120,7 +120,7 @@ class _ParentChatPageState extends State<ParentChatPage> {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: primary.withOpacity(0.1),
+                      color: primary.withValues(alpha: 0.1),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -153,12 +153,12 @@ class _ParentChatPageState extends State<ParentChatPage> {
                             ),
                             decoration: BoxDecoration(
                               color: isDarkMode
-                                  ? Colors.yellow[900]!.withOpacity(0.3)
+                                  ? Colors.yellow[900]!.withValues(alpha: 0.3)
                                   : Colors.yellow[100],
                               borderRadius: BorderRadius.circular(999),
                               border: Border.all(
                                 color: isDarkMode
-                                    ? Colors.yellow[900]!.withOpacity(0.5)
+                                    ? Colors.yellow[900]!.withValues(alpha: 0.5)
                                     : Colors.yellow[200]!,
                               ),
                             ),
@@ -209,7 +209,7 @@ class _ParentChatPageState extends State<ParentChatPage> {
                       ),
                       decoration: BoxDecoration(
                         color: isDarkMode
-                            ? Colors.grey[800]!.withOpacity(0.5)
+                            ? Colors.grey[800]!.withValues(alpha: 0.5)
                             : Colors.grey[100],
                         borderRadius: BorderRadius.circular(999),
                       ),
@@ -401,7 +401,7 @@ class _ParentChatPageState extends State<ParentChatPage> {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: primary.withOpacity(0.3),
+                          color: primary.withValues(alpha: 0.3),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
                         ),
@@ -518,7 +518,7 @@ class _ParentChatPageState extends State<ParentChatPage> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: primary.withOpacity(0.2),
+                    color: primary.withValues(alpha: 0.2),
                     blurRadius: 2,
                     offset: const Offset(0, 1),
                   ),

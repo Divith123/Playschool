@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentGalleryPage extends StatefulWidget {
@@ -100,15 +100,15 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.06),
+                          color: Colors.black.withValues(alpha: 0.06),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
                       ],
                       border: Border.all(
                         color: isDarkMode
-                            ? Colors.white.withOpacity(0.05)
-                            : Colors.black.withOpacity(0.05),
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.05),
                       ),
                     ),
                     child: Column(
@@ -266,7 +266,7 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: primary.withOpacity(0.1),
+                          color: primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -327,8 +327,8 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
                             ),
                             decoration: BoxDecoration(
                               color: isDarkMode
-                                  ? Colors.black.withOpacity(0.6)
-                                  : Colors.white.withOpacity(0.9),
+                                  ? Colors.black.withValues(alpha: 0.6)
+                                  : Colors.white.withValues(alpha: 0.9),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Row(
@@ -392,7 +392,7 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: primary.withOpacity(0.1),
+                          color: primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Column(
@@ -480,12 +480,12 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
           ? Stack(
               alignment: Alignment.center,
               children: [
-                Container(color: Colors.black.withOpacity(0.2)),
+                Container(color: Colors.black.withValues(alpha: 0.2)),
                 Container(
                   width: 48,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: primary.withOpacity(0.9),
+                    color: primary.withValues(alpha: 0.9),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -504,7 +504,7 @@ class _ParentGalleryPageState extends State<ParentGalleryPage> {
                         vertical: 2,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.6),
+                        color: Colors.black.withValues(alpha: 0.6),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(

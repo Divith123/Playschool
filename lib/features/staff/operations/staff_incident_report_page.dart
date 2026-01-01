@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffIncidentReportPage extends StatefulWidget {
@@ -69,7 +69,7 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                   maxHeight: 70,
                   minHeight: 70,
                   child: Container(
-                    color: bgColor.withOpacity(0.95),
+                    color: bgColor.withValues(alpha: 0.95),
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: SafeArea(
                       bottom: false,
@@ -161,7 +161,7 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 2,
                               offset: const Offset(0, 1),
                             ),
@@ -466,7 +466,9 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                                                   boxShadow: [
                                                     BoxShadow(
                                                       color: Colors.black
-                                                          .withOpacity(0.05),
+                                                          .withValues(
+                                                            alpha: 0.05,
+                                                          ),
                                                       blurRadius: 2,
                                                     ),
                                                   ],
@@ -613,8 +615,9 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                                               ),
                                               boxShadow: [
                                                 BoxShadow(
-                                                  color: primary.withOpacity(
-                                                    0.7 *
+                                                  color: primary.withValues(
+                                                    alpha:
+                                                        0.7 *
                                                         (1 - _controller.value),
                                                   ),
                                                   blurRadius: _animation.value,
@@ -761,16 +764,20 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                         child: Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: primary.withOpacity(isDarkMode ? 0.05 : 0.1),
+                            color: primary.withValues(
+                              alpha: isDarkMode ? 0.05 : 0.1,
+                            ),
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: primary.withOpacity(0.2)),
+                            border: Border.all(
+                              color: primary.withValues(alpha: 0.2),
+                            ),
                           ),
                           child: Row(
                             children: [
                               Container(
                                 padding: const EdgeInsets.all(8),
                                 decoration: BoxDecoration(
-                                  color: primary.withOpacity(0.2),
+                                  color: primary.withValues(alpha: 0.2),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(
@@ -807,7 +814,7 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                                 value: notifyParents,
                                 onChanged: (val) =>
                                     setState(() => notifyParents = val),
-                                activeColor: primary,
+                                activeThumbColor: primary,
                               ),
                             ],
                           ),
@@ -829,7 +836,7 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: bgColor.withOpacity(0.8),
+                color: bgColor.withValues(alpha: 0.8),
                 border: Border(
                   top: BorderSide(
                     color: isDarkMode ? Colors.grey[800]! : Colors.grey[100]!,
@@ -853,7 +860,7 @@ class _StaffIncidentReportPageState extends State<StaffIncidentReportPage>
                       fontWeight: FontWeight.bold,
                     ),
                     elevation: 5,
-                    shadowColor: primary.withOpacity(0.2),
+                    shadowColor: primary.withValues(alpha: 0.2),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:playschool/features/admin/students/admin_admissions_page.dart';
@@ -199,7 +199,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                     ),
                   ],
@@ -252,7 +252,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                         icon: Icons.school_outlined,
                         iconColor: Colors.blue[600]!,
                         iconBg: isDarkMode
-                            ? Colors.blue[900]!.withOpacity(0.3)
+                            ? Colors.blue[900]!.withValues(alpha: 0.3)
                             : Colors.blue[100]!,
                         trend: '+2%',
                         surfaceColor: surfaceColor,
@@ -266,7 +266,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                         icon: Icons.badge_outlined,
                         iconColor: Colors.purple[600]!,
                         iconBg: isDarkMode
-                            ? Colors.purple[900]!.withOpacity(0.3)
+                            ? Colors.purple[900]!.withValues(alpha: 0.3)
                             : Colors.purple[100]!,
                         surfaceColor: surfaceColor,
                         textColor: textColor,
@@ -279,7 +279,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                         icon: Icons.person_add_alt_1_outlined,
                         iconColor: Colors.orange[600]!,
                         iconBg: isDarkMode
-                            ? Colors.orange[900]!.withOpacity(0.3)
+                            ? Colors.orange[900]!.withValues(alpha: 0.3)
                             : Colors.orange[100]!,
                         trend: '3 High',
                         surfaceColor: surfaceColor,
@@ -302,7 +302,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                         icon: Icons.attach_money,
                         iconColor: Colors.red[600]!,
                         iconBg: isDarkMode
-                            ? Colors.red[900]!.withOpacity(0.3)
+                            ? Colors.red[900]!.withValues(alpha: 0.3)
                             : Colors.red[100]!,
                         trend: '5 Acc',
                         surfaceColor: surfaceColor,
@@ -572,7 +572,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                       icon: Icons.person_off,
                       iconColor: Colors.red[600]!,
                       iconBg: isDarkMode
-                          ? Colors.red[900]!.withOpacity(0.3)
+                          ? Colors.red[900]!.withValues(alpha: 0.3)
                           : Colors.red[100]!,
                       surfaceColor: surfaceColor,
                       textColor: textColor,
@@ -587,7 +587,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                       icon: Icons.mark_chat_unread,
                       iconColor: Colors.blue[600]!,
                       iconBg: isDarkMode
-                          ? Colors.blue[900]!.withOpacity(0.3)
+                          ? Colors.blue[900]!.withValues(alpha: 0.3)
                           : Colors.blue[100]!,
                       surfaceColor: surfaceColor,
                       textColor: textColor,
@@ -602,7 +602,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                       icon: Icons.construction,
                       iconColor: Colors.yellow[600]!,
                       iconBg: isDarkMode
-                          ? Colors.yellow[900]!.withOpacity(0.3)
+                          ? Colors.yellow[900]!.withValues(alpha: 0.3)
                           : Colors.yellow[100]!,
                       surfaceColor: surfaceColor,
                       textColor: textColor,
@@ -641,12 +641,12 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               offset: const Offset(0, 1),
               blurRadius: 2,
             ),
           ],
-          border: Border.all(color: Colors.grey.withOpacity(0.1)),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
         ),
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -747,7 +747,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Colors.transparent, Colors.black.withOpacity(0.6)],
+              colors: [Colors.transparent, Colors.black.withValues(alpha: 0.6)],
             ),
           ),
           padding: const EdgeInsets.all(16),
@@ -763,7 +763,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                     child: Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
+                        color: Colors.white.withValues(alpha: 0.2),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(icon, color: Colors.white, size: 20),
@@ -804,12 +804,12 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             offset: const Offset(0, 1),
             blurRadius: 2,
           ),
         ],
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

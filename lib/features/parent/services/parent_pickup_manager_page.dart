@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentPickupManagerPage extends StatefulWidget {
@@ -58,7 +58,7 @@ class _ParentPickupManagerPageState extends State<ParentPickupManagerPage> {
       body: ListView.separated(
         padding: const EdgeInsets.all(16),
         itemCount: _persons.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 16),
+        separatorBuilder: (context, index) => const SizedBox(height: 16),
         itemBuilder: (context, index) {
           final person = _persons[index];
           return Container(
@@ -68,7 +68,7 @@ class _ParentPickupManagerPageState extends State<ParentPickupManagerPage> {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
@@ -107,7 +107,7 @@ class _ParentPickupManagerPageState extends State<ParentPickupManagerPage> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.green.withOpacity(0.1),
+                          color: Colors.green.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Row(

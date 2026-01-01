@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -60,7 +60,7 @@ class _StaffHygieneAuditPageState extends State<StaffHygieneAuditPage> {
           const SizedBox(height: 24),
           ..._checklist.keys
               .map((item) => _buildChecklistItem(item, isDarkMode))
-              .toList(),
+              ,
           const SizedBox(height: 32),
           PrimaryButton(
             label: 'Submit Audit Log',
@@ -111,7 +111,7 @@ class _StaffHygieneAuditPageState extends State<StaffHygieneAuditPage> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? color.withOpacity(0.2) : Colors.transparent,
+          color: isSelected ? color.withValues(alpha: 0.2) : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: isSelected ? color : Colors.grey[400]!),
         ),

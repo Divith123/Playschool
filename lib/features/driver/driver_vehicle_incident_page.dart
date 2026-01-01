@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -47,8 +47,8 @@ class _DriverVehicleIncidentPageState extends State<DriverVehicleIncidentPage> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.1),
-                border: Border.all(color: Colors.red.withOpacity(0.5)),
+                color: Colors.red.withValues(alpha: 0.1),
+                border: Border.all(color: Colors.red.withValues(alpha: 0.5)),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -68,7 +68,7 @@ class _DriverVehicleIncidentPageState extends State<DriverVehicleIncidentPage> {
 
             _buildLabel('Incident Type', textColor),
             DropdownButtonFormField<String>(
-              value: _severity,
+              initialValue: _severity,
               dropdownColor: surfaceColor,
               style: TextStyle(color: textColor),
               decoration: _buildInputDeco(surfaceColor),
@@ -156,7 +156,7 @@ class _DriverVehicleIncidentPageState extends State<DriverVehicleIncidentPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.3)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.3)),
       ),
       child: Icon(icon, color: Colors.grey),
     );

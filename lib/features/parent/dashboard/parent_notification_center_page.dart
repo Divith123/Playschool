@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class ParentNotificationCenterPage extends StatelessWidget {
@@ -61,7 +61,7 @@ class ParentNotificationCenterPage extends StatelessWidget {
           return Container(
             color: notif['isRead']
                 ? Colors.transparent
-                : (isDarkMode ? Colors.blue.withOpacity(0.1) : Colors.blue[50]),
+                : (isDarkMode ? Colors.blue.withValues(alpha: 0.1) : Colors.blue[50]),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 16,

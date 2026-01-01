@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:playschool/core/app_theme.dart';
 
 class ParentEmergencyContactsRedPage extends StatefulWidget {
   const ParentEmergencyContactsRedPage({super.key});
@@ -46,7 +45,7 @@ class _ParentEmergencyContactsRedPageState
                 'Only use these contacts for genuine emergencies.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexend(
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha: 0.9),
                   fontSize: 16,
                 ),
               ),
@@ -62,7 +61,7 @@ class _ParentEmergencyContactsRedPageState
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Row(
@@ -143,7 +142,7 @@ class _ParentEmergencyContactsRedPageState
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFFB71C1C).withOpacity(0.1),
+                color: const Color(0xFFB71C1C).withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.call, size: 28),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentTransportTrackingPage extends StatefulWidget {
@@ -61,8 +61,8 @@ class _ParentTransportTrackingPageState
                     'https://lh3.googleusercontent.com/aida-public/AB6AXuDU09YXf293ZEcP40gHYI9LMPNdTkYNNeRMDCtzWRudf4R61_jAyORR3-pScLBW6swBNr6L_YOOKd8DruikebFzprfrJM4PuSDhawm8C-f57KKcyxjCNNYkzeU82M5T4F77MXQdc0St6C2x6pBDRNqfdcEvq-IbRGCsNvtTcNg5LI4jL_3dO8Z7dzaT8LfzkLnmpUChG3Qx9A9H60hQaB4738xCOIGU_tbn027LCLrlVub67bZcmHnjFKIA0PBAb7Qm83uF2jhZMC4',
                     fit: BoxFit.cover,
                     color: isDarkMode
-                        ? Colors.black.withOpacity(0.6)
-                        : Colors.white.withOpacity(0.2),
+                        ? Colors.black.withValues(alpha: 0.6)
+                        : Colors.white.withValues(alpha: 0.2),
                     colorBlendMode: isDarkMode
                         ? BlendMode.darken
                         : BlendMode.lighten,
@@ -100,8 +100,9 @@ class _ParentTransportTrackingPageState
                                         ),
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: primary.withOpacity(
-                                        0.4 * (1 - _pulseController.value),
+                                      color: primary.withValues(
+                                        alpha:
+                                            0.4 * (1 - _pulseController.value),
                                       ),
                                     ),
                                   );
@@ -117,7 +118,9 @@ class _ParentTransportTrackingPageState
                                   border: Border.all(color: primary, width: 2),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.2),
+                                      color: Colors.black.withValues(
+                                        alpha: 0.2,
+                                      ),
                                       blurRadius: 10,
                                       offset: const Offset(0, 4),
                                     ),
@@ -142,7 +145,7 @@ class _ParentTransportTrackingPageState
                               borderRadius: BorderRadius.circular(8),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
+                                  color: Colors.black.withValues(alpha: 0.1),
                                   blurRadius: 4,
                                 ),
                               ],
@@ -192,11 +195,11 @@ class _ParentTransportTrackingPageState
                   end: Alignment.bottomCenter,
                   colors: [
                     isDarkMode
-                        ? Colors.black.withOpacity(0.9)
-                        : Colors.white.withOpacity(0.9),
+                        ? Colors.black.withValues(alpha: 0.9)
+                        : Colors.white.withValues(alpha: 0.9),
                     isDarkMode
-                        ? Colors.black.withOpacity(0.5)
-                        : Colors.white.withOpacity(0.5),
+                        ? Colors.black.withValues(alpha: 0.5)
+                        : Colors.white.withValues(alpha: 0.5),
                     Colors.transparent,
                   ],
                 ),
@@ -219,11 +222,11 @@ class _ParentTransportTrackingPageState
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: surfaceColor.withOpacity(0.8),
+                          color: surfaceColor.withValues(alpha: 0.8),
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 4,
                             ),
                           ],
@@ -257,7 +260,7 @@ class _ParentTransportTrackingPageState
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
+                          color: Colors.black.withValues(alpha: 0.1),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -271,7 +274,7 @@ class _ParentTransportTrackingPageState
                         Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: primary.withOpacity(0.2),
+                            color: primary.withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                           ),
                           child: const Icon(
@@ -346,7 +349,7 @@ class _ParentTransportTrackingPageState
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 20,
                       offset: const Offset(0, -4),
                     ),
@@ -448,7 +451,9 @@ class _ParentTransportTrackingPageState
                                     ),
                                     decoration: BoxDecoration(
                                       color: isDarkMode
-                                          ? Colors.green[900]!.withOpacity(0.3)
+                                          ? Colors.green[900]!.withValues(
+                                              alpha: 0.3,
+                                            )
                                           : Colors.green[50],
                                       borderRadius: BorderRadius.circular(4),
                                     ),
@@ -525,7 +530,7 @@ class _ParentTransportTrackingPageState
                               value: "Moving",
                               label: "Current Status",
                               surfaceColor: isDarkMode
-                                  ? backgroundDark.withOpacity(0.5)
+                                  ? backgroundDark.withValues(alpha: 0.5)
                                   : backgroundLight,
                               borderColor: isDarkMode
                                   ? Colors.grey[800]!
@@ -541,7 +546,7 @@ class _ParentTransportTrackingPageState
                               value: "2.5 km",
                               label: "Distance Left",
                               surfaceColor: isDarkMode
-                                  ? backgroundDark.withOpacity(0.5)
+                                  ? backgroundDark.withValues(alpha: 0.5)
                                   : backgroundLight,
                               borderColor: isDarkMode
                                   ? Colors.grey[800]!
@@ -560,7 +565,7 @@ class _ParentTransportTrackingPageState
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: isDarkMode
-                              ? backgroundDark.withOpacity(0.5)
+                              ? backgroundDark.withValues(alpha: 0.5)
                               : backgroundLight,
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(
@@ -722,7 +727,9 @@ class _ParentTransportTrackingPageState
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: primary.withOpacity(0.3),
+                                            color: primary.withValues(
+                                              alpha: 0.3,
+                                            ),
                                             blurRadius: 0,
                                             spreadRadius: 2,
                                           ),
@@ -788,7 +795,7 @@ class _ParentTransportTrackingPageState
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black.withValues(alpha: 0.1),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),

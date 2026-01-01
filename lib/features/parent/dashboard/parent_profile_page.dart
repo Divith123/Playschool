@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/parent/services/parent_pickup_manager_page.dart';
 import 'package:playschool/features/common/app_settings_page.dart';
@@ -119,7 +119,7 @@ class ParentProfilePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -129,7 +129,7 @@ class ParentProfilePage extends StatelessWidget {
         leading: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: (iconColor ?? textColor).withOpacity(0.1),
+            color: (iconColor ?? textColor).withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Icon(icon, color: iconColor ?? textColor),

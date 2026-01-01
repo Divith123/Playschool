@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 
@@ -109,7 +109,7 @@ class _AdminKioskAnalyticsPageState extends State<AdminKioskAnalyticsPage> {
               decoration: BoxDecoration(
                 color: surfaceColor,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -179,7 +179,7 @@ class _AdminKioskAnalyticsPageState extends State<AdminKioskAnalyticsPage> {
           color: surfaceColor,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10),
+            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10),
           ],
         ),
         child: Column(
@@ -188,7 +188,7 @@ class _AdminKioskAnalyticsPageState extends State<AdminKioskAnalyticsPage> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: color, size: 20),
@@ -220,7 +220,7 @@ class _AdminKioskAnalyticsPageState extends State<AdminKioskAnalyticsPage> {
           width: 20,
           height: (pct / 100) * 140, // Scale to height
           decoration: BoxDecoration(
-            color: color.withOpacity(0.7),
+            color: color.withValues(alpha: 0.7),
             borderRadius: BorderRadius.circular(4),
           ),
         ),
@@ -246,7 +246,7 @@ class _AdminKioskAnalyticsPageState extends State<AdminKioskAnalyticsPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

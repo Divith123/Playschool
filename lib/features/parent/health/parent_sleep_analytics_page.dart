@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 
@@ -121,7 +121,7 @@ class _ParentSleepAnalyticsPageState extends State<ParentSleepAnalyticsPage> {
                     right: 20,
                     top: 50,
                     child: Container(
-                      color: Colors.grey.withOpacity(0.2),
+                      color: Colors.grey.withValues(alpha: 0.2),
                       height: 4,
                     ),
                   ),
@@ -177,7 +177,7 @@ class _ParentSleepAnalyticsPageState extends State<ParentSleepAnalyticsPage> {
         width: screenWidth * (widthPct - startPct),
         height: 50,
         decoration: BoxDecoration(
-          color: Colors.indigo.withOpacity(0.8),
+          color: Colors.indigo.withValues(alpha: 0.8),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
@@ -207,7 +207,7 @@ class _ParentSleepAnalyticsPageState extends State<ParentSleepAnalyticsPage> {
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         children: [

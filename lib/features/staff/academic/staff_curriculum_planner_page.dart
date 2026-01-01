@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -46,7 +46,7 @@ class _StaffCurriculumPlannerPageState
                   maxHeight: 220, // Height for header + chips + dates
                   minHeight: 180, // Collapsed height
                   child: Container(
-                    color: bgColor.withOpacity(0.95),
+                    color: bgColor.withValues(alpha: 0.95),
                     padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                     child: SafeArea(
                       bottom: false,
@@ -66,8 +66,8 @@ class _StaffCurriculumPlannerPageState
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: isDarkMode
-                                        ? Colors.white.withOpacity(0.1)
-                                        : Colors.black.withOpacity(0.05),
+                                        ? Colors.white.withValues(alpha: 0.1)
+                                        : Colors.black.withValues(alpha: 0.05),
                                   ),
                                   child: Icon(
                                     Icons.arrow_back,
@@ -178,7 +178,7 @@ class _StaffCurriculumPlannerPageState
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
-                              color: primary.withOpacity(0.3),
+                              color: primary.withValues(alpha: 0.3),
                               blurRadius: 10,
                               offset: const Offset(0, 4),
                             ),
@@ -195,7 +195,7 @@ class _StaffCurriculumPlannerPageState
                                 height: 128,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Colors.white.withOpacity(0.2),
+                                  color: Colors.white.withValues(alpha: 0.2),
                                 ),
                                 child: BackdropFilter(
                                   filter: ImageFilter.blur(
@@ -214,7 +214,7 @@ class _StaffCurriculumPlannerPageState
                                 height: 160,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Colors.black.withOpacity(0.05),
+                                  color: Colors.black.withValues(alpha: 0.05),
                                 ),
                               ),
                             ),
@@ -239,7 +239,7 @@ class _StaffCurriculumPlannerPageState
                                             style: GoogleFonts.lexend(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w600,
-                                              color: darkText.withOpacity(0.7),
+                                              color: darkText.withValues(alpha: 0.7),
                                               letterSpacing: 0.5,
                                               height: 1.5,
                                             ),
@@ -259,7 +259,7 @@ class _StaffCurriculumPlannerPageState
                                             style: GoogleFonts.lexend(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: darkText.withOpacity(0.8),
+                                              color: darkText.withValues(alpha: 0.8),
                                             ),
                                           ),
                                         ],
@@ -268,7 +268,7 @@ class _StaffCurriculumPlannerPageState
                                         width: 48,
                                         height: 48,
                                         decoration: BoxDecoration(
-                                          color: Colors.white.withOpacity(0.3),
+                                          color: Colors.white.withValues(alpha: 0.3),
                                           shape: BoxShape.circle,
                                         ),
                                         child: const Icon(
@@ -309,7 +309,7 @@ class _StaffCurriculumPlannerPageState
                                     height: 10,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: darkText.withOpacity(0.1),
+                                      color: darkText.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                     child: FractionallySizedBox(
@@ -333,7 +333,7 @@ class _StaffCurriculumPlannerPageState
                                       style: GoogleFonts.lexend(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w500,
-                                        color: darkText.withOpacity(0.7),
+                                        color: darkText.withValues(alpha: 0.7),
                                       ),
                                     ),
                                   ),
@@ -433,8 +433,8 @@ class _StaffCurriculumPlannerPageState
                                 isDashed: true,
                                 isDarkMode: isDarkMode,
                                 surfaceColor: isDarkMode
-                                    ? Colors.grey[800]!.withOpacity(0.6)
-                                    : Colors.white.withOpacity(0.6),
+                                    ? Colors.grey[800]!.withValues(alpha: 0.6)
+                                    : Colors.white.withValues(alpha: 0.6),
                                 textColor: isDarkMode
                                     ? Colors.grey[300]!
                                     : Colors.grey[700]!,
@@ -467,7 +467,7 @@ class _StaffCurriculumPlannerPageState
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: primary.withOpacity(0.3),
+                    color: primary.withValues(alpha: 0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -540,7 +540,7 @@ class _StaffCurriculumPlannerPageState
             boxShadow: isSelected
                 ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                     ),
                   ]
@@ -583,12 +583,12 @@ class _StaffCurriculumPlannerPageState
         boxShadow: isSelected
             ? [
                 BoxShadow(
-                  color: primary.withOpacity(0.2),
+                  color: primary.withValues(alpha: 0.2),
                   blurRadius: 8,
                   spreadRadius: 2,
                 ),
               ]
-            : [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)],
+            : [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 4)],
       ),
       child: Column(
         children: [
@@ -712,7 +712,7 @@ class _StaffCurriculumPlannerPageState
                   ? null
                   : [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -836,7 +836,7 @@ class _StaffCurriculumPlannerPageState
                     .none, // Can't easily do dashed border without package
               ),
               color: isDarkMode
-                  ? Colors.grey[800]!.withOpacity(0.3)
+                  ? Colors.grey[800]!.withValues(alpha: 0.3)
                   : Colors.grey[50], // Fallback visual
             ),
             child: Center(
@@ -882,18 +882,18 @@ class _StaffCurriculumPlannerPageState
     Color bg, text;
     if (label == 'Social') {
       bg = isDarkMode
-          ? Colors.purple[900]!.withOpacity(0.3)
+          ? Colors.purple[900]!.withValues(alpha: 0.3)
           : Colors.purple[50]!;
       text = isDarkMode ? Colors.purple[300]! : Colors.purple[700]!;
     } else if (label == 'Music') {
-      bg = isDarkMode ? Colors.blue[900]!.withOpacity(0.3) : Colors.blue[50]!;
+      bg = isDarkMode ? Colors.blue[900]!.withValues(alpha: 0.3) : Colors.blue[50]!;
       text = isDarkMode ? Colors.blue[300]! : Colors.blue[700]!;
     } else if (label == 'Art') {
-      bg = isDarkMode ? Colors.pink[900]!.withOpacity(0.3) : Colors.pink[50]!;
+      bg = isDarkMode ? Colors.pink[900]!.withValues(alpha: 0.3) : Colors.pink[50]!;
       text = isDarkMode ? Colors.pink[300]! : Colors.pink[700]!;
     } else {
       bg = isDarkMode
-          ? Colors.yellow[900]!.withOpacity(0.3)
+          ? Colors.yellow[900]!.withValues(alpha: 0.3)
           : Colors.yellow[50]!;
       text = isDarkMode ? Colors.yellow[300]! : Colors.yellow[700]!;
     }
@@ -903,7 +903,7 @@ class _StaffCurriculumPlannerPageState
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: text.withOpacity(0.1)),
+        border: Border.all(color: text.withValues(alpha: 0.1)),
       ),
       child: Text(
         label,

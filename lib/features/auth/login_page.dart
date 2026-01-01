@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/admin/students/admissions_page.dart';
@@ -123,42 +123,50 @@ class _LoginPageState extends State<LoginPage> {
                     maxHeight: 400,
                   ),
                   child: Stack(
+                    fit: StackFit.expand,
                     children: [
-                      // Background image with gradient overlay
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(40),
-                            bottomRight: Radius.circular(40),
+                      // Background image with proper centering
+                      Positioned.fill(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(40),
+                              bottomRight: Radius.circular(40),
+                            ),
                           ),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(40),
-                            bottomRight: Radius.circular(40),
-                          ),
-                          child: CachedNetworkImage(
-                            imageUrl:
-                                'https://lh3.googleusercontent.com/aida-public/AB6AXuDrMwBRVT6ZWuDVrDKWoOlifSPGwkV82KQYr5xIOKK_TqOYl_GiU7l30qQ4iA3ATz_-U-SBxqZ2rjYmefxaC5wtVeG6yAvJw26S1r0p_UEUIJo9Ax1AiGS8pCWbgZHFb8of5wyXypskovHLRmBNM3mgQCTfLNk7awYHSI4kiosUbHLnVIzFj18xZ8vJk5mg15YIPDN-UQY4aWZRyAiZYC54TnS-5PljnQhdbZ4LybjC__qrHecgmfzR8qFmeCx_ZVP1fTXtRWAdkIM',
-                            fit: BoxFit.cover,
-                            placeholder: (context, url) => Container(
-                              color: isDarkMode
-                                  ? const Color(0xFF102216)
-                                  : const Color(0xFFF6F8F6),
-                              child: Center(
-                                child: CircularProgressIndicator(
-                                  color: primary,
+                          child: ClipRRect(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(40),
+                              bottomRight: Radius.circular(40),
+                            ),
+                            child: CachedNetworkImage(
+                              imageUrl:
+                                  'https://lh3.googleusercontent.com/aida-public/AB6AXuDrMwBRVT6ZWuDVrDKWoOlifSPGwkV82KQYr5xIOKK_TqOYl_GiU7l30qQ4iA3ATz_-U-SBxqZ2rjYmefxaC5wtVeG6yAvJw26S1r0p_UEUIJo9Ax1AiGS8pCWbgZHFb8of5wyXypskovHLRmBNM3mgQCTfLNk7awYHSI4kiosUbHLnVIzFj18xZ8vJk5mg15YIPDN-UQY4aWZRyAiZYC54TnS-5PljnQhdbZ4LybjC__qrHecgmfzR8qFmeCx_ZVP1fTXtRWAdkIM',
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                              height: double.infinity,
+                              alignment: Alignment.center,
+                              placeholder: (context, url) => Container(
+                                color: isDarkMode
+                                    ? const Color(0xFF102216)
+                                    : const Color(0xFFF6F8F6),
+                                child: Center(
+                                  child: CircularProgressIndicator(
+                                    color: primary,
+                                  ),
                                 ),
                               ),
-                            ),
-                            errorWidget: (context, url, error) => Container(
-                              color: isDarkMode
-                                  ? const Color(0xFF102216)
-                                  : const Color(0xFFF6F8F6),
-                              child: Icon(
-                                Icons.school,
-                                size: 80,
-                                color: primary.withOpacity(0.3),
+                              errorWidget: (context, url, error) => Container(
+                                color: isDarkMode
+                                    ? const Color(0xFF102216)
+                                    : const Color(0xFFF6F8F6),
+                                child: Center(
+                                  child: Icon(
+                                    Icons.school,
+                                    size: 80,
+                                    color: primary.withValues(alpha: 0.3),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -171,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [
-                              Colors.black.withOpacity(0.1),
+                              Colors.black.withValues(alpha: 0.1),
                               Colors.transparent,
                               isDarkMode ? backgroundDark : backgroundLight,
                             ],
@@ -195,7 +203,7 @@ class _LoginPageState extends State<LoginPage> {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
+                                  color: Colors.black.withValues(alpha: 0.1),
                                   blurRadius: 8,
                                   offset: const Offset(0, 2),
                                 ),
@@ -317,7 +325,7 @@ class _LoginPageState extends State<LoginPage> {
                                     borderRadius: BorderRadius.circular(16),
                                   ),
                                   elevation: 8,
-                                  shadowColor: primary.withOpacity(0.25),
+                                  shadowColor: primary.withValues(alpha: 0.25),
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -403,7 +411,7 @@ class _LoginPageState extends State<LoginPage> {
                                     Container(
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: primary.withOpacity(0.2),
+                                        color: primary.withValues(alpha: 0.2),
                                         shape: BoxShape.circle,
                                       ),
                                       child: Icon(
@@ -539,7 +547,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 4,
                 offset: const Offset(0, 1),
               ),
@@ -567,8 +575,8 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: hint,
                     hintStyle: TextStyle(
                       color: isDarkMode
-                          ? Colors.grey[500]?.withOpacity(0.7)
-                          : textMuted.withOpacity(0.7),
+                          ? Colors.grey[500]?.withValues(alpha: 0.7)
+                          : textMuted.withValues(alpha: 0.7),
                       fontSize: 16,
                     ),
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),

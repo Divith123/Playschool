@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 
@@ -133,7 +133,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildDropdown(String label, List<String> items, bool isDarkMode) {
     return DropdownButtonFormField<String>(
-      value: items.first,
+      initialValue: items.first,
       items: items
           .map((e) => DropdownMenuItem(value: e, child: Text(e)))
           .toList(),

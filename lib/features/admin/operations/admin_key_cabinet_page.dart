@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/widgets/primary_button.dart';
-import 'package:playschool/widgets/status_badge.dart';
 
 class AdminKeyCabinetPage extends StatefulWidget {
   const AdminKeyCabinetPage({super.key});
@@ -87,7 +85,7 @@ class _AdminKeyCabinetPageState extends State<AdminKeyCabinetPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         children: [
@@ -95,8 +93,8 @@ class _AdminKeyCabinetPageState extends State<AdminKeyCabinetPage> {
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: isIssued
-                  ? Colors.orange.withOpacity(0.1)
-                  : AppColors.success.withOpacity(0.1),
+                  ? Colors.orange.withValues(alpha: 0.1)
+                  : AppColors.success.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(

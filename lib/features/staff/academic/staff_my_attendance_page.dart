@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/common/app_settings_page.dart';
 
@@ -66,7 +66,7 @@ class _StaffMyAttendancePageState extends State<StaffMyAttendancePage> {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -109,8 +109,8 @@ class _StaffMyAttendancePageState extends State<StaffMyAttendancePage> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _isCheckedIn
-                          ? Colors.red.withOpacity(0.1)
-                          : primary.withOpacity(0.1),
+                          ? Colors.red.withValues(alpha: 0.1)
+                          : primary.withValues(alpha: 0.1),
                       border: Border.all(
                         color: _isCheckedIn ? Colors.red : primary,
                         width: 4,
@@ -118,7 +118,7 @@ class _StaffMyAttendancePageState extends State<StaffMyAttendancePage> {
                       boxShadow: [
                         BoxShadow(
                           color: (_isCheckedIn ? Colors.red : primary)
-                              .withOpacity(0.2),
+                              .withValues(alpha: 0.2),
                           blurRadius: 20,
                           spreadRadius: 2,
                         ),
@@ -245,7 +245,7 @@ class _StaffMyAttendancePageState extends State<StaffMyAttendancePage> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -295,7 +295,7 @@ class _StaffMyAttendancePageState extends State<StaffMyAttendancePage> {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
               color: duration == 'Active'
-                  ? primary.withOpacity(0.1)
+                  ? primary.withValues(alpha: 0.1)
                   : (isDarkMode ? Colors.white10 : Colors.grey[100]),
               borderRadius: BorderRadius.circular(20),
             ),

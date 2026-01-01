@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
-import 'package:playschool/widgets/student_card.dart';
 
 class StaffFieldTripTrackerPage extends StatefulWidget {
   const StaffFieldTripTrackerPage({super.key});
@@ -86,7 +85,7 @@ class _StaffFieldTripTrackerPageState extends State<StaffFieldTripTrackerPage> {
           // Panic Button Section
           Container(
             padding: const EdgeInsets.all(16),
-            color: Colors.red.withOpacity(0.1),
+            color: Colors.red.withValues(alpha: 0.1),
             child: Row(
               children: [
                 Icon(Icons.warning_amber_rounded, color: Colors.red, size: 32),
@@ -193,7 +192,7 @@ class _StaffFieldTripTrackerPageState extends State<StaffFieldTripTrackerPage> {
         color: surfaceColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isPresent ? Colors.transparent : Colors.red.withOpacity(0.3),
+          color: isPresent ? Colors.transparent : Colors.red.withValues(alpha: 0.3),
         ),
       ),
       child: Row(
@@ -229,9 +228,9 @@ class _StaffFieldTripTrackerPageState extends State<StaffFieldTripTrackerPage> {
                 student['isPresent'] = val;
               });
             },
-            activeColor: AppColors.success,
+            activeThumbColor: AppColors.success,
             inactiveThumbColor: Colors.red,
-            inactiveTrackColor: Colors.red.withOpacity(0.2),
+            inactiveTrackColor: Colors.red.withValues(alpha: 0.2),
           ),
         ],
       ),

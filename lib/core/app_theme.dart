@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
@@ -63,7 +63,6 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         surface: AppColors.surfaceLight,
-        background: AppColors.backgroundLight,
         error: AppColors.error,
       ),
       iconTheme: const IconThemeData(color: AppColors.textMainLight),
@@ -84,7 +83,6 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         surface: AppColors.surfaceDark,
-        background: AppColors.backgroundDark,
         error: AppColors.error,
       ),
       iconTheme: const IconThemeData(color: AppColors.textMainDark),

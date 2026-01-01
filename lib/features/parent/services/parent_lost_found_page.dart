@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 import 'package:playschool/widgets/search_bar.dart';
-import 'package:playschool/widgets/status_badge.dart';
 
 class ParentLostFoundPage extends StatefulWidget {
   const ParentLostFoundPage({super.key});
@@ -163,7 +162,7 @@ class _ParentLostFoundPageState extends State<ParentLostFoundPage> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -198,7 +197,7 @@ class _ParentLostFoundPageState extends State<ParentLostFoundPage> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.6),
+                      color: Colors.black.withValues(alpha: 0.6),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
@@ -214,7 +213,7 @@ class _ParentLostFoundPageState extends State<ParentLostFoundPage> {
                 if (isClaimed)
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(16),
                       ),

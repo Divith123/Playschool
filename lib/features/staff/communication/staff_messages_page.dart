@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffMessagesPage extends StatelessWidget {
@@ -34,7 +34,7 @@ class StaffMessagesPage extends StatelessWidget {
             Icon(
               Icons.chat_bubble_outline,
               size: 64,
-              color: textColor.withOpacity(0.2),
+              color: textColor.withValues(alpha: 0.2),
             ),
             const SizedBox(height: 16),
             Text(
@@ -42,7 +42,7 @@ class StaffMessagesPage extends StatelessWidget {
               style: GoogleFonts.lexend(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: textColor.withOpacity(0.5),
+                color: textColor.withValues(alpha: 0.5),
               ),
             ),
           ],

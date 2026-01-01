@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/common/app_settings_page.dart';
@@ -58,7 +58,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
+                                color: Colors.black.withValues(alpha: 0.1),
                                 blurRadius: 4,
                                 offset: const Offset(0, 2),
                               ),
@@ -120,7 +120,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: isDarkMode
-                            ? Colors.green[900]!.withOpacity(0.3)
+                            ? Colors.green[900]!.withValues(alpha: 0.3)
                             : Colors.green[100],
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -203,7 +203,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                           border: Border.all(color: borderColor),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 2,
                               offset: const Offset(0, 1),
                             ),
@@ -246,7 +246,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                           border: Border.all(color: borderColor),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 2,
                               offset: const Offset(0, 1),
                             ),
@@ -326,7 +326,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                           border: Border.all(color: borderColor),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 2,
                               offset: const Offset(0, 1),
                             ),
@@ -384,7 +384,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                           border: Border.all(color: borderColor),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withValues(alpha: 0.05),
                               blurRadius: 2,
                               offset: const Offset(0, 1),
                             ),
@@ -397,7 +397,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                               height: 40,
                               decoration: BoxDecoration(
                                 color: isDarkMode
-                                    ? Colors.red[900]!.withOpacity(0.2)
+                                    ? Colors.red[900]!.withValues(alpha: 0.2)
                                     : Colors.red[50],
                                 shape: BoxShape.circle,
                               ),
@@ -463,14 +463,14 @@ class AdminStaffProfilePage extends StatelessWidget {
                                 ? Colors.red[400]
                                 : Colors.red[600],
                             backgroundColor: isDarkMode
-                                ? Colors.red[900]!.withOpacity(0.1)
+                                ? Colors.red[900]!.withValues(alpha: 0.1)
                                 : Colors.red[50],
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                               side: BorderSide(
                                 color: isDarkMode
-                                    ? Colors.red[900]!.withOpacity(0.5)
+                                    ? Colors.red[900]!.withValues(alpha: 0.5)
                                     : Colors.red[200]!,
                               ),
                             ),
@@ -505,7 +505,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                     right: 16,
                   ),
                   decoration: BoxDecoration(
-                    color: bgColor.withOpacity(0.9),
+                    color: bgColor.withValues(alpha: 0.9),
                     border: Border(bottom: BorderSide(color: borderColor)),
                   ),
                   child: Row(
@@ -569,7 +569,7 @@ class AdminStaffProfilePage extends StatelessWidget {
           width: 48,
           height: 48,
           decoration: BoxDecoration(
-            color: primaryColor.withOpacity(0.1),
+            color: primaryColor.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Icon(icon, color: primaryColor, size: 24),
@@ -677,8 +677,8 @@ class AdminStaffProfilePage extends StatelessWidget {
           width: 120,
           padding: const EdgeInsets.all(16),
           color: isDarkMode
-              ? Colors.grey[800]!.withOpacity(0.3)
-              : Colors.grey[50]!.withOpacity(0.5),
+              ? Colors.grey[800]!.withValues(alpha: 0.3)
+              : Colors.grey[50]!.withValues(alpha: 0.5),
           child: Text(
             label,
             style: GoogleFonts.manrope(
@@ -701,7 +701,7 @@ class AdminStaffProfilePage extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: isDarkMode
-                            ? Colors.orange[900]!.withOpacity(0.3)
+                            ? Colors.orange[900]!.withValues(alpha: 0.3)
                             : Colors.orange[100],
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
@@ -760,8 +760,8 @@ class AdminStaffProfilePage extends StatelessWidget {
               height: 40,
               decoration: BoxDecoration(
                 color: isDarkMode
-                    ? iconColor.withOpacity(0.2)
-                    : iconColor.withOpacity(0.1), // Adjusted opacity
+                    ? iconColor.withValues(alpha: 0.2)
+                    : iconColor.withValues(alpha: 0.1), // Adjusted opacity
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(icon, color: iconColor, size: 20),

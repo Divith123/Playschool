@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminExpenseTrackerPage extends StatefulWidget {
@@ -143,7 +143,7 @@ class _AdminExpenseTrackerPageState extends State<AdminExpenseTrackerPage> {
                       width: 30,
                       height: height,
                       decoration: BoxDecoration(
-                        color: primary.withOpacity(0.5 + (index * 0.05)),
+                        color: primary.withValues(alpha: 0.5 + (index * 0.05)),
                         borderRadius: BorderRadius.circular(8),
                       ),
                     );
@@ -161,7 +161,7 @@ class _AdminExpenseTrackerPageState extends State<AdminExpenseTrackerPage> {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: _categories.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 8),
+              separatorBuilder: (context, index) => const SizedBox(width: 8),
               itemBuilder: (context, index) {
                 final cat = _categories[index];
                 final isSelected = cat == _selectedCategory;
@@ -174,7 +174,9 @@ class _AdminExpenseTrackerPageState extends State<AdminExpenseTrackerPage> {
                     ),
                     decoration: BoxDecoration(
                       color: isSelected ? textColor : Colors.transparent,
-                      border: Border.all(color: textColor.withOpacity(0.2)),
+                      border: Border.all(
+                        color: textColor.withValues(alpha: 0.2),
+                      ),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
@@ -195,7 +197,7 @@ class _AdminExpenseTrackerPageState extends State<AdminExpenseTrackerPage> {
             child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               itemCount: _expenses.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 12),
+              separatorBuilder: (context, index) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
                 final expense = _expenses[index];
                 return Container(
@@ -205,7 +207,7 @@ class _AdminExpenseTrackerPageState extends State<AdminExpenseTrackerPage> {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -216,7 +218,9 @@ class _AdminExpenseTrackerPageState extends State<AdminExpenseTrackerPage> {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: (expense['color'] as Color).withOpacity(0.1),
+                          color: (expense['color'] as Color).withValues(
+                            alpha: 0.1,
+                          ),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(expense['icon'], color: expense['color']),

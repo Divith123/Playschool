@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -66,7 +66,7 @@ class _StaffLunchOrderPageState extends State<StaffLunchOrderPage> {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
-            color: Colors.orange.withOpacity(0.1),
+            color: Colors.orange.withValues(alpha: 0.1),
             child: Text(
               'Orders must be placed by 10:00 AM daily.',
               style: TextStyle(
@@ -92,13 +92,13 @@ class _StaffLunchOrderPageState extends State<StaffLunchOrderPage> {
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: isSelected
-                          ? AppColors.primary.withOpacity(0.1)
+                          ? AppColors.primary.withValues(alpha: 0.1)
                           : surfaceColor,
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
                         color: isSelected
                             ? AppColors.primary
-                            : Colors.grey.withOpacity(0.1),
+                            : Colors.grey.withValues(alpha: 0.1),
                         width: 2,
                       ),
                     ),

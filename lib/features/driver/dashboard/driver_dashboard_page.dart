@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/features/common/app_settings_page.dart';
 import 'package:playschool/features/driver/driver_trip_log_page.dart';
@@ -8,7 +7,6 @@ import 'package:playschool/features/driver/driver_maintenance_log_page.dart';
 import 'package:playschool/features/driver/driver_route_detail_page.dart';
 import 'package:playschool/features/driver/driver_route_optimizer_page.dart';
 import 'package:playschool/features/driver/driver_vehicle_incident_page.dart';
-import 'package:playschool/widgets/primary_button.dart';
 
 class DriverDashboardPage extends StatefulWidget {
   const DriverDashboardPage({super.key});
@@ -70,7 +68,7 @@ class _DriverDashboardPageState extends State<DriverDashboardPage> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -82,7 +80,7 @@ class _DriverDashboardPageState extends State<DriverDashboardPage> {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -199,7 +197,7 @@ class _DriverDashboardPageState extends State<DriverDashboardPage> {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -211,7 +209,7 @@ class _DriverDashboardPageState extends State<DriverDashboardPage> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: color, size: 32),

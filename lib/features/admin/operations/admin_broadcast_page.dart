@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminBroadcastPage extends StatefulWidget {
@@ -299,7 +299,7 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
                               border: Border.all(color: borderColor),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.02),
+                                  color: Colors.black.withValues(alpha: 0.02),
                                   blurRadius: 4,
                                   offset: const Offset(0, 2),
                                 ),
@@ -402,12 +402,12 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             color: isDarkMode
-                                ? Colors.red[900]!.withOpacity(0.2)
+                                ? Colors.red[900]!.withValues(alpha: 0.2)
                                 : Colors.red[50],
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                               color: isDarkMode
-                                  ? Colors.red[900]!.withOpacity(0.3)
+                                  ? Colors.red[900]!.withValues(alpha: 0.3)
                                   : Colors.red[100]!,
                             ),
                           ),
@@ -475,7 +475,7 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
       ),
       // Sticky Bottom Action Bar
       bottomSheet: Container(
-        color: bgColor.withOpacity(0.95), // Slight transparency
+        color: bgColor.withValues(alpha: 0.95), // Slight transparency
         padding: const EdgeInsets.all(16),
         child: SafeArea(
           top: false,
@@ -514,7 +514,7 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
                     backgroundColor: primary,
                     foregroundColor: Colors.black,
                     elevation: 4,
-                    shadowColor: primary.withOpacity(0.4),
+                    shadowColor: primary.withValues(alpha: 0.4),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -556,7 +556,7 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
             boxShadow: isSelected
                 ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                       offset: const Offset(0, 1),
                     ),
@@ -607,7 +607,7 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
         boxShadow: isActive
             ? [
                 BoxShadow(
-                  color: primary.withOpacity(0.3),
+                  color: primary.withValues(alpha: 0.3),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
@@ -710,7 +710,9 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
           children: [
             Radio<String>(
               value: value,
+              // ignore: deprecated_member_use
               groupValue: groupValue,
+              // ignore: deprecated_member_use
               onChanged: onChanged,
               activeColor: Colors.red[600],
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -736,8 +738,8 @@ class _AdminBroadcastPageState extends State<AdminBroadcastPage> {
                       fontSize: 12,
                       color: isWarning
                           ? (isDarkMode
-                                ? Colors.red[300]!.withOpacity(0.7)
-                                : Colors.red[600]!.withOpacity(0.8))
+                                ? Colors.red[300]!.withValues(alpha: 0.7)
+                                : Colors.red[600]!.withValues(alpha: 0.8))
                           : (isDarkMode ? Colors.grey[400] : Colors.grey[500]),
                     ),
                   ),

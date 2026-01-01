@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -102,13 +102,13 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
           padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
           decoration: BoxDecoration(
             color: isDarkMode
-                ? backgroundDark.withOpacity(0.95)
-                : backgroundLight.withOpacity(0.95),
+                ? backgroundDark.withValues(alpha: 0.95)
+                : backgroundLight.withValues(alpha: 0.95),
             border: Border(
               bottom: BorderSide(
                 color: isDarkMode
-                    ? Colors.grey[800]!.withOpacity(0.5)
-                    : Colors.grey[200]!.withOpacity(0.5),
+                    ? Colors.grey[800]!.withValues(alpha: 0.5)
+                    : Colors.grey[200]!.withValues(alpha: 0.5),
               ),
             ),
           ),
@@ -195,7 +195,7 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                     ),
                   ],
@@ -241,12 +241,12 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: isDarkMode
-                        ? Colors.orange[900]!.withOpacity(0.2)
+                        ? Colors.orange[900]!.withValues(alpha: 0.2)
                         : Colors.orange[50]!,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: isDarkMode
-                          ? Colors.orange[800]!.withOpacity(0.3)
+                          ? Colors.orange[800]!.withValues(alpha: 0.3)
                           : Colors.orange[100]!,
                     ),
                   ),
@@ -259,7 +259,7 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: isDarkMode
-                                  ? Colors.orange[800]!.withOpacity(0.4)
+                                  ? Colors.orange[800]!.withValues(alpha: 0.4)
                                   : Colors.orange[100]!,
                               shape: BoxShape.circle,
                             ),
@@ -752,9 +752,9 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 2),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 2),
         ],
       ),
       child: Column(
@@ -820,8 +820,8 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
     bool isMain = false,
     VoidCallback? onTap,
   }) {
-    final bg = isDarkMode ? bgBase.withOpacity(0.2) : bgBase.withOpacity(0.1);
-    final iconColor = isDarkMode ? bgBase.withOpacity(0.8) : bgBase;
+    final bg = isDarkMode ? bgBase.withValues(alpha: 0.2) : bgBase.withValues(alpha: 0.1);
+    final iconColor = isDarkMode ? bgBase.withValues(alpha: 0.8) : bgBase;
 
     return InkWell(
       onTap: onTap,
@@ -831,9 +831,9 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
         decoration: BoxDecoration(
           color: surfaceColor,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.grey.withOpacity(0.1)),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
           boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 2),
+            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 2),
           ],
         ),
         child: Column(
@@ -887,7 +887,7 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -896,8 +896,8 @@ class _StaffDashboardPageState extends State<StaffDashboardPage> {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: isDarkMode
-                  ? color.withOpacity(0.3)
-                  : color.withOpacity(0.1),
+                  ? color.withValues(alpha: 0.3)
+                  : color.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: color, size: 18),

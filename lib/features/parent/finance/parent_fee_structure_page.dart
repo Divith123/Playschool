@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
 import 'package:playschool/widgets/status_badge.dart';
@@ -38,7 +38,7 @@ class ParentFeeStructurePage extends StatelessWidget {
             const SizedBox(height: 24),
             Text('Breakdown', style: AppTextStyles.headingMedium(isDarkMode)),
             const SizedBox(height: 16),
-            ..._fees.map((f) => _buildFeeRow(f, isDarkMode)).toList(),
+            ..._fees.map((f) => _buildFeeRow(f, isDarkMode)),
             const Divider(height: 48),
             Text(
               'Important Dates',
@@ -156,7 +156,7 @@ class ParentFeeStructurePage extends StatelessWidget {
             width: 60,
             padding: const EdgeInsets.symmetric(vertical: 6),
             decoration: BoxDecoration(
-              color: isPast ? Colors.grey : AppColors.primary.withOpacity(0.2),
+              color: isPast ? Colors.grey : AppColors.primary.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             alignment: Alignment.center,

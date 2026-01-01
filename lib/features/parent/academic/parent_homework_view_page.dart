@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class ParentHomeworkViewPage extends StatefulWidget {
@@ -69,7 +69,7 @@ class _ParentHomeworkViewPageState extends State<ParentHomeworkViewPage> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -85,7 +85,7 @@ class _ParentHomeworkViewPageState extends State<ParentHomeworkViewPage> {
                 decoration: BoxDecoration(
                   color:
                       (task['isDone'] ? AppColors.success : AppColors.primary)
-                          .withOpacity(0.1),
+                          .withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(

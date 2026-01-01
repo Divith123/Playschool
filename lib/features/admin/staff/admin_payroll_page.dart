@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminPayrollPage extends StatefulWidget {
@@ -61,7 +61,7 @@ class _AdminPayrollPageState extends State<AdminPayrollPage> {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: primary.withOpacity(0.3),
+                    color: primary.withValues(alpha: 0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),
@@ -73,7 +73,7 @@ class _AdminPayrollPageState extends State<AdminPayrollPage> {
                   Text(
                     'Total Payroll (Oct)',
                     style: GoogleFonts.lexend(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       fontSize: 14,
                     ),
                   ),
@@ -154,7 +154,7 @@ class _AdminPayrollPageState extends State<AdminPayrollPage> {
         Text(
           label,
           style: GoogleFonts.lexend(
-            color: color.withOpacity(0.7),
+            color: color.withValues(alpha: 0.7),
             fontSize: 12,
           ),
         ),
@@ -176,7 +176,7 @@ class _AdminPayrollPageState extends State<AdminPayrollPage> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -218,8 +218,8 @@ class _AdminPayrollPageState extends State<AdminPayrollPage> {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
               color: index == 0
-                  ? Colors.green.withOpacity(0.1)
-                  : Colors.orange.withOpacity(0.1),
+                  ? Colors.green.withValues(alpha: 0.1)
+                  : Colors.orange.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdmissionsPage extends StatefulWidget {
@@ -67,7 +67,7 @@ class _AdmissionsPageState extends State<AdmissionsPage> {
                 width: 60,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: primary.withOpacity(0.2),
+                  color: primary.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -133,7 +133,7 @@ class _AdmissionsPageState extends State<AdmissionsPage> {
             // Top Navigation
             Container(
               decoration: BoxDecoration(
-                color: (isDarkMode ? backgroundDark : backgroundLight).withOpacity(0.95),
+                color: (isDarkMode ? backgroundDark : backgroundLight).withValues(alpha: 0.95),
                 border: Border(
                   bottom: BorderSide(
                     color: isDarkMode ? Colors.grey[800]! : Colors.grey[200]!,
@@ -352,7 +352,7 @@ class _AdmissionsPageState extends State<AdmissionsPage> {
       // Sticky Bottom CTA
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: (isDarkMode ? backgroundDark : backgroundLight).withOpacity(0.9),
+          color: (isDarkMode ? backgroundDark : backgroundLight).withValues(alpha: 0.9),
           border: Border(
             top: BorderSide(
               color: isDarkMode ? Colors.grey[800]! : Colors.grey[200]!,
@@ -372,7 +372,7 @@ class _AdmissionsPageState extends State<AdmissionsPage> {
                 borderRadius: BorderRadius.circular(12),
               ),
               elevation: 4,
-              shadowColor: primary.withOpacity(0.3),
+              shadowColor: primary.withValues(alpha: 0.3),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -562,7 +562,7 @@ class _AdmissionsPageState extends State<AdmissionsPage> {
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: primary.withOpacity(0.1),
+                    color: primary.withValues(alpha: 0.1),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   ),

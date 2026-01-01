@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
-import 'package:playschool/widgets/primary_button.dart';
 
 class StaffAssessmentBuilderPage extends StatefulWidget {
   const StaffAssessmentBuilderPage({super.key});
@@ -102,7 +101,7 @@ class _StaffAssessmentBuilderPageState
                               borderRadius: BorderRadius.circular(8),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
+                                  color: Colors.black.withValues(alpha: 0.2),
                                   blurRadius: 8,
                                 ),
                               ],
@@ -123,7 +122,7 @@ class _StaffAssessmentBuilderPageState
                             color: surfaceColor,
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                              color: Colors.grey.withOpacity(0.2),
+                              color: Colors.grey.withValues(alpha: 0.2),
                             ),
                           ),
                           child: Center(
@@ -148,7 +147,7 @@ class _StaffAssessmentBuilderPageState
           // Canvas (Drop Target)
           Expanded(
             child: DragTarget<String>(
-              onAccept: (data) {
+              onAcceptWithDetails: (data) {
                 setState(() {
                   _addedFields.add({'name': data, 'maxScore': 10});
                 });
@@ -156,7 +155,7 @@ class _StaffAssessmentBuilderPageState
               builder: (context, candidates, rejects) {
                 return Container(
                   color: candidates.isNotEmpty
-                      ? AppColors.primary.withOpacity(0.05)
+                      ? AppColors.primary.withValues(alpha: 0.05)
                       : Colors.transparent,
                   child: Column(
                     children: [
@@ -225,7 +224,7 @@ class _StaffAssessmentBuilderPageState
       decoration: BoxDecoration(
         color: surfaceColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,7 +259,7 @@ class _StaffAssessmentBuilderPageState
                 width: 60,
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.1),
+                  color: Colors.grey.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(

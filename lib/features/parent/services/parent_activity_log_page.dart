@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentActivityLogPage extends StatefulWidget {
@@ -50,8 +50,8 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
         ),
         centerTitle: true,
         backgroundColor: isDarkMode
-            ? backgroundDark.withOpacity(0.9)
-            : backgroundLight.withOpacity(0.9),
+            ? backgroundDark.withValues(alpha: 0.9)
+            : backgroundLight.withValues(alpha: 0.9),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: textColor),
@@ -84,7 +84,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                   border: Border.all(color: borderColor),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                       offset: const Offset(0, 1),
                     ),
@@ -152,7 +152,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                             children: [
                               _buildStatusChip(
                                 'Currently: Nap Time',
-                                primary.withOpacity(0.2),
+                                primary.withValues(alpha: 0.2),
                                 isDarkMode
                                     ? Colors.green[300]!
                                     : Colors.green[800]!,
@@ -179,7 +179,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: primary.withOpacity(0.3),
+                            color: primary.withValues(alpha: 0.3),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -247,7 +247,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                   _buildTimelineItem(
                     icon: Icons.brush,
                     iconBg: isDarkMode
-                        ? Colors.purple[900]!.withOpacity(0.3)
+                        ? Colors.purple[900]!.withValues(alpha: 0.3)
                         : Colors.purple[100]!,
                     iconColor: isDarkMode
                         ? Colors.purple[300]!
@@ -278,7 +278,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                                     begin: Alignment.bottomCenter,
                                     end: Alignment.topCenter,
                                     colors: [
-                                      Colors.black.withOpacity(0.6),
+                                      Colors.black.withValues(alpha: 0.6),
                                       Colors.transparent,
                                     ],
                                   ),
@@ -339,7 +339,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                   _buildTimelineItem(
                     icon: Icons.bedtime,
                     iconBg: isDarkMode
-                        ? Colors.blue[900]!.withOpacity(0.3)
+                        ? Colors.blue[900]!.withValues(alpha: 0.3)
                         : Colors.blue[100]!,
                     iconColor: isDarkMode
                         ? Colors.blue[300]!
@@ -356,7 +356,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                           ),
                           decoration: BoxDecoration(
                             color: isDarkMode
-                                ? Colors.blue[900]!.withOpacity(0.2)
+                                ? Colors.blue[900]!.withValues(alpha: 0.2)
                                 : Colors.blue[50],
                             borderRadius: BorderRadius.circular(4),
                           ),
@@ -390,7 +390,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                   _buildTimelineItem(
                     icon: Icons.restaurant,
                     iconBg: isDarkMode
-                        ? Colors.orange[900]!.withOpacity(0.3)
+                        ? Colors.orange[900]!.withValues(alpha: 0.3)
                         : Colors.orange[100]!,
                     iconColor: isDarkMode
                         ? Colors.orange[300]!
@@ -404,7 +404,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                           height: 48,
                           decoration: BoxDecoration(
                             color: isDarkMode
-                                ? Colors.orange[900]!.withOpacity(0.2)
+                                ? Colors.orange[900]!.withValues(alpha: 0.2)
                                 : Colors.orange[50],
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -447,7 +447,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                   _buildTimelineItem(
                     icon: Icons.water_drop,
                     iconBg: isDarkMode
-                        ? Colors.teal[900]!.withOpacity(0.3)
+                        ? Colors.teal[900]!.withValues(alpha: 0.3)
                         : Colors.teal[100]!,
                     iconColor: isDarkMode
                         ? Colors.teal[300]!
@@ -485,7 +485,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                   _buildTimelineItem(
                     icon: Icons.sentiment_satisfied,
                     iconBg: isDarkMode
-                        ? Colors.yellow[900]!.withOpacity(0.3)
+                        ? Colors.yellow[900]!.withValues(alpha: 0.3)
                         : Colors.yellow[100]!,
                     iconColor: isDarkMode
                         ? Colors.yellow[300]!
@@ -587,7 +587,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
               boxShadow: isSelected
                   ? [
                       BoxShadow(
-                        color: primary.withOpacity(0.2),
+                        color: primary.withValues(alpha: 0.2),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -763,7 +763,7 @@ class _ParentActivityLogPageState extends State<ParentActivityLogPage> {
                         border: Border.all(color: borderColor),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withValues(alpha: 0.05),
                             blurRadius: 2,
                             offset: const Offset(0, 1),
                           ),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class StaffComplianceVaultPage extends StatelessWidget {
@@ -56,7 +56,7 @@ class StaffComplianceVaultPage extends StatelessWidget {
           style: AppTextStyles.headingMedium(isDarkMode).copyWith(fontSize: 18),
         ),
         const SizedBox(height: 12),
-        ...items.map((item) => _buildDocItem(item, isDarkMode)).toList(),
+        ...items.map((item) => _buildDocItem(item, isDarkMode)),
         const SizedBox(height: 24),
       ],
     );

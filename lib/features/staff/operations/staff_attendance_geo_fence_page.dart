@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/widgets/primary_button.dart';
@@ -94,10 +94,10 @@ class _StaffAttendanceGeoFencePageState
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: AppColors.primary.withOpacity(0.3),
+                        color: AppColors.primary.withValues(alpha: 0.3),
                         width: 2,
                       ),
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                     ),
                     child: Center(
                       child: Icon(
@@ -118,7 +118,7 @@ class _StaffAttendanceGeoFencePageState
                       border: Border.all(color: Colors.white, width: 2),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
+                          color: Colors.black.withValues(alpha: 0.2),
                           blurRadius: 4,
                         ),
                       ],
@@ -142,7 +142,7 @@ class _StaffAttendanceGeoFencePageState
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, -5),
                   ),
@@ -158,8 +158,8 @@ class _StaffAttendanceGeoFencePageState
                     ),
                     decoration: BoxDecoration(
                       color: _isInsideRange
-                          ? AppColors.success.withOpacity(0.1)
-                          : Colors.red.withOpacity(0.1),
+                          ? AppColors.success.withValues(alpha: 0.1)
+                          : Colors.red.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
