@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class StudentCard extends StatelessWidget {
@@ -28,7 +29,12 @@ class StudentCard extends StatelessWidget {
     final borderColor = isDarkMode ? Colors.white10 : Colors.grey[200]!;
 
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        if (onTap != null) {
+          HapticFeedback.lightImpact();
+          onTap!();
+        }
+      },
       borderRadius: BorderRadius.circular(16),
       child: Container(
         padding: const EdgeInsets.all(12),

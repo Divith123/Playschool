@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playschool/features/parent/academic/parent_calendar_page.dart';
 import 'package:playschool/features/parent/communication/parent_chat_page.dart';
@@ -8,6 +9,17 @@ import 'package:playschool/features/parent/communication/parent_messages_page.da
 import 'package:playschool/features/parent/transport/parent_transport_tracking_page.dart';
 import 'package:playschool/features/parent/dashboard/parent_profile_page.dart'; // Added
 import 'package:playschool/features/parent/finance/parent_payment_history_page.dart'; // Added
+import 'package:playschool/features/parent/academic/parent_homework_view_page.dart';
+import 'package:playschool/features/parent/academic/parent_report_card_view_page.dart';
+import 'package:playschool/features/parent/finance/parent_fee_structure_page.dart';
+import 'package:playschool/features/parent/academic/parent_school_handbook_page.dart';
+import 'package:playschool/features/parent/services/parent_event_registration_page.dart';
+import 'package:playschool/features/parent/services/parent_gate_pass_page.dart';
+import 'package:playschool/features/parent/transport/parent_transport_stop_change.dart';
+import 'package:playschool/features/parent/communication/parent_transport_feedback_page.dart';
+import 'package:playschool/features/parent/health/parent_sleep_analytics_page.dart';
+import 'package:playschool/features/parent/health/parent_emergency_contacts_red_page.dart';
+import 'package:playschool/features/parent/engagement/parent_referral_program_page.dart';
 import 'dart:ui' as ui;
 
 class ParentDashboardPage extends StatefulWidget {
@@ -85,6 +97,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
               offset: const Offset(0, -20), // Lifted up
               child: GestureDetector(
                 onTap: () {
+                  HapticFeedback.lightImpact();
                   // Handle FAB tap (e.g., show add menu)
                 },
                 child: Container(
@@ -137,6 +150,7 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
     final isActive = _selectedIndex == index;
     return InkWell(
       onTap: () {
+        HapticFeedback.lightImpact();
         setState(() {
           _selectedIndex = index;
         });
@@ -505,6 +519,197 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
                   ),
                 ),
 
+                // Academics & Services Section
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Academics & Services",
+                            style: GoogleFonts.lexend(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: isDarkMode
+                                  ? Colors.white
+                                  : Colors.grey[900],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            _buildQuickAction(
+                              icon: Icons.assignment_outlined,
+                              label: 'Homework',
+                              color: Colors.blue,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentHomeworkViewPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.assessment_outlined,
+                              label: 'Reports',
+                              color: Colors.deepPurple,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentReportCardViewPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.menu_book_outlined,
+                              label: 'Handbook',
+                              color: Colors.brown,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentSchoolHandbookPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.event_available,
+                              label: 'Events',
+                              color: Colors.pink,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentEventRegistrationPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.receipt_long,
+                              label: 'Fees',
+                              color: Colors.green,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentFeeStructurePage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.directions_bus_filled_outlined,
+                              label: 'Stop Chg', // Shortened
+                              color: Colors.orange,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentTransportStopChangePage(),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            _buildQuickAction(
+                              icon: Icons.outbond_outlined,
+                              label: 'Gate Pass',
+                              color: Colors.teal,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const ParentGatePassPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.feedback_outlined,
+                              label: 'Feedback',
+                              color: Colors.cyan,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentTransportFeedbackPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.bedtime,
+                              label: 'Sleep',
+                              color: Colors.indigo,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentSleepAnalyticsPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.emergency_share,
+                              label: 'Emergency',
+                              color: Colors.red,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentEmergencyContactsRedPage(),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            _buildQuickAction(
+                              icon: Icons.card_giftcard,
+                              label: 'Referral',
+                              color: Colors.amber,
+                              isDarkMode: isDarkMode,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ParentReferralProgramPage(),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
                 // Today's Highlights
                 const SizedBox(height: 16),
                 Padding(
@@ -782,7 +987,11 @@ class _ParentDashboardPageState extends State<ParentDashboardPage> {
     final textColor = isDarkMode ? color[400]! : color[600]!;
 
     return InkWell(
-      onTap: onTap ?? () {},
+      onTap: () {
+        HapticFeedback.lightImpact();
+        if (onTap != null) onTap();
+      },
+      borderRadius: BorderRadius.circular(12),
       child: Column(
         children: [
           Container(

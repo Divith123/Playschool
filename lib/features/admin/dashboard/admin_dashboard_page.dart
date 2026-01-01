@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:playschool/features/admin/students/admin_admissions_page.dart';
 import 'package:playschool/features/admin/finance/admin_finance_page.dart';
 import 'package:playschool/features/admin/staff/admin_staff_profile_page.dart';
@@ -8,6 +9,12 @@ import 'package:playschool/features/admin/transport/admin_transport_page.dart';
 import 'package:playschool/features/admin/dashboard/admin_lead_dashboard_page.dart';
 import 'package:playschool/features/admin/staff/admin_staff_scheduler_page.dart';
 import 'package:playschool/features/admin/staff/admin_payroll_page.dart';
+import 'package:playschool/features/admin/operations/admin_inventory_page.dart';
+import 'package:playschool/features/admin/operations/admin_event_manager_page.dart';
+import 'package:playschool/features/admin/reception/admin_visitor_log_page.dart';
+import 'package:playschool/features/admin/operations/admin_newsletter_editor_page.dart';
+import 'package:playschool/features/admin/system/admin_settings_roles_page.dart';
+import 'package:playschool/features/admin/system/admin_system_audit_logs_page.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -77,35 +84,50 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
               icon: Icons.dashboard_outlined,
               label: 'Home',
               isSelected: _selectedIndex == 0,
-              onTap: () => setState(() => _selectedIndex = 0),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                setState(() => _selectedIndex = 0);
+              },
               isDarkMode: isDarkMode,
             ),
             _buildNavItem(
               icon: Icons.people_outline,
               label: 'Admissions',
               isSelected: _selectedIndex == 1,
-              onTap: () => setState(() => _selectedIndex = 1),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                setState(() => _selectedIndex = 1);
+              },
               isDarkMode: isDarkMode,
             ),
             _buildNavItem(
               icon: Icons.campaign_outlined,
               label: 'Broadcast',
               isSelected: _selectedIndex == 2,
-              onTap: () => setState(() => _selectedIndex = 2),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                setState(() => _selectedIndex = 2);
+              },
               isDarkMode: isDarkMode,
             ),
             _buildNavItem(
               icon: Icons.attach_money,
               label: 'Finance',
               isSelected: _selectedIndex == 3,
-              onTap: () => setState(() => _selectedIndex = 3),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                setState(() => _selectedIndex = 3);
+              },
               isDarkMode: isDarkMode,
             ),
             _buildNavItem(
               icon: Icons.person_outline,
               label: 'Profile',
               isSelected: _selectedIndex == 4,
-              onTap: () => setState(() => _selectedIndex = 4),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                setState(() => _selectedIndex = 4);
+              },
               isDarkMode: isDarkMode,
             ),
           ],
@@ -417,6 +439,99 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                         );
                       },
                     ),
+                    _buildActionCard(
+                      title: 'Inventory',
+                      icon: Icons.inventory_2_outlined,
+                      image:
+                          'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=300',
+                      surfaceColor: surfaceColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AdminInventoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _buildActionCard(
+                      title: 'Events',
+                      icon: Icons.event,
+                      image:
+                          'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=300',
+                      surfaceColor: surfaceColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AdminEventManagerPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _buildActionCard(
+                      title: 'Visitors',
+                      icon: Icons.person_pin_circle_outlined,
+                      image:
+                          'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=300',
+                      surfaceColor: surfaceColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AdminVisitorLogPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _buildActionCard(
+                      title: 'Newsletter',
+                      icon: Icons.newspaper,
+                      image:
+                          'https://images.unsplash.com/photo-1586339949216-35c2747cc36d?auto=format&fit=crop&q=80&w=300',
+                      surfaceColor: surfaceColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const AdminNewsletterEditorPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _buildActionCard(
+                      title: 'Roles & Perms',
+                      icon: Icons.admin_panel_settings_outlined,
+                      image:
+                          'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=300',
+                      surfaceColor: surfaceColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const AdminSettingsRolesPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _buildActionCard(
+                      title: 'Audit Logs',
+                      icon: Icons.history_edu,
+                      image:
+                          'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=300',
+                      surfaceColor: surfaceColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const AdminSystemAuditLogsPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
 
@@ -615,7 +730,10 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
     VoidCallback? onTap,
   }) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        HapticFeedback.lightImpact();
+        if (onTap != null) onTap();
+      },
       borderRadius: BorderRadius.circular(12),
       child: Container(
         decoration: BoxDecoration(

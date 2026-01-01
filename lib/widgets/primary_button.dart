@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:playschool/core/app_theme.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -31,7 +32,14 @@ class PrimaryButton extends StatelessWidget {
       width: width,
       height: height,
       child: ElevatedButton(
-        onPressed: isLoading ? null : onPressed,
+        onPressed: isLoading
+            ? null
+            : () {
+                if (onPressed != null) {
+                  HapticFeedback.lightImpact();
+                  onPressed!();
+                }
+              },
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ?? AppColors.primary,
           foregroundColor: textColor ?? const Color(0xFF102216),

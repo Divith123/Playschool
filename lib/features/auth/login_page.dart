@@ -5,7 +5,7 @@ import 'package:playschool/features/admin/students/admissions_page.dart';
 import 'package:playschool/features/admin/dashboard/admin_dashboard_page.dart';
 import 'package:playschool/features/parent/dashboard/parent_dashboard_page.dart';
 import 'package:playschool/features/staff/dashboard/staff_dashboard_page.dart';
-import 'package:playschool/features/driver/driver_login_page.dart';
+import 'package:playschool/features/driver/dashboard/driver_dashboard_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class LoginPage extends StatefulWidget {
@@ -37,12 +37,14 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _togglePasswordVisibility() {
+    HapticFeedback.lightImpact();
     setState(() {
       _obscurePassword = !_obscurePassword;
     });
   }
 
   void _handleLogin() {
+    HapticFeedback.lightImpact();
     final email = _emailController.text.trim();
     final password = _passwordController.text;
 
@@ -58,6 +60,13 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const StaffDashboardPage()),
+      );
+    }
+    // Driver Login
+    else if (email == 'driver@gmail.com' && password == 'driver') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const DriverDashboardPage()),
       );
     }
     // Default Parent Login
@@ -80,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleAdmission() {
+    HapticFeedback.lightImpact();
     // Navigate to admissions page
     Navigator.push(
       context,
@@ -266,6 +276,7 @@ class _LoginPageState extends State<LoginPage> {
                               alignment: Alignment.centerRight,
                               child: TextButton(
                                 onPressed: () {
+                                  HapticFeedback.lightImpact();
                                   // Handle forgot password
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
@@ -424,6 +435,7 @@ class _LoginPageState extends State<LoginPage> {
                           // Need Help Link
                           TextButton.icon(
                             onPressed: () {
+                              HapticFeedback.lightImpact();
                               // Handle support
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -463,6 +475,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: IconButton(
                               onPressed: () {
+                                HapticFeedback.lightImpact();
                                 // Visual hint only
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
@@ -486,30 +499,9 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           const SizedBox(height: 16),
 
-                          // Driver Login Link
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const DriverLoginPage(),
-                                ),
-                              );
-                            },
-                            icon: Icon(
-                              Icons.directions_bus,
-                              size: 20,
-                              color: textMuted,
-                            ),
-                            label: Text(
-                              'Driver Login',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: textMuted,
-                              ),
-                            ),
-                          ),
+                          // Driver Login Link - Removed as we support driver@gmail.com
+                          // const SizedBox(height: 16),
+                          // TextButton.icon(...)
                         ],
                       ),
                     ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminLeadDashboardPage extends StatefulWidget {
@@ -70,7 +71,10 @@ class _AdminLeadDashboardPageState extends State<AdminLeadDashboardPage>
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: textColor),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            HapticFeedback.lightImpact();
+            Navigator.pop(context);
+          },
         ),
         title: Text(
           'Lead Management',
@@ -108,6 +112,7 @@ class _AdminLeadDashboardPageState extends State<AdminLeadDashboardPage>
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
+          HapticFeedback.lightImpact();
           // Add manual lead
         },
         backgroundColor: primary,
@@ -224,7 +229,9 @@ class _AdminLeadDashboardPageState extends State<AdminLeadDashboardPage>
               ),
               IconButton(
                 icon: Icon(Icons.phone, color: primary),
-                onPressed: () {},
+                onPressed: () {
+                  HapticFeedback.lightImpact();
+                },
               ),
             ],
           ),
@@ -246,7 +253,10 @@ class _AdminLeadDashboardPageState extends State<AdminLeadDashboardPage>
 
   Widget _buildActionBtn(String label, IconData icon, Color color) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        HapticFeedback.lightImpact();
+        // Handle action
+      },
       child: Row(
         children: [
           Icon(icon, size: 16, color: color),

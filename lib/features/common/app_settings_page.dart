@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:playschool/core/app_theme.dart';
 import 'package:playschool/services/update_service.dart';
 import 'package:ota_update/ota_update.dart';
@@ -39,7 +40,10 @@ class _AppSettingsPageState extends State<AppSettingsPage> {
             ),
             value: _darkMode,
             activeColor: AppColors.primary,
-            onChanged: (val) => setState(() => _darkMode = val),
+            onChanged: (val) {
+              HapticFeedback.lightImpact();
+              setState(() => _darkMode = val);
+            },
           ),
           _buildSectionHeader('Notifications', isDarkMode),
           SwitchListTile(
@@ -49,7 +53,10 @@ class _AppSettingsPageState extends State<AppSettingsPage> {
             ),
             value: _pushNotifications,
             activeColor: AppColors.primary,
-            onChanged: (val) => setState(() => _pushNotifications = val),
+            onChanged: (val) {
+              HapticFeedback.lightImpact();
+              setState(() => _pushNotifications = val);
+            },
           ),
           SwitchListTile(
             title: Text(
@@ -62,7 +69,10 @@ class _AppSettingsPageState extends State<AppSettingsPage> {
             ),
             value: _emailAlerts,
             activeColor: AppColors.primary,
-            onChanged: (val) => setState(() => _emailAlerts = val),
+            onChanged: (val) {
+              HapticFeedback.lightImpact();
+              setState(() => _emailAlerts = val);
+            },
           ),
           _buildSectionHeader('About', isDarkMode),
           ListTile(
