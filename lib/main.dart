@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:playschool/features/common/sitemap_page.dart';
+import 'package:playschool/features/auth/splash_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -38,8 +38,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.system,
-      // DEV MODE: Start with Sitemap to verify all pages
-      home: const SitemapPage(),
+      home: const SplashScreen(),
     );
   }
 }
