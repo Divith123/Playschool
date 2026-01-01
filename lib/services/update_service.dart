@@ -1,56 +1,61 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:http/http.dart' as http;
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:ota_update/ota_update.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class UpdateService {
-  // CONFIGURATION
-  static const String _owner = 'Divith123'; // Replace with actual owner
-  static const String _repo = 'Playschool'; // Replace with actual repo name
-  static const String _releasesUrl =
-      'https://api.github.com/repos/$_owner/$_repo/releases/latest';
+  // Replace with your actual GitHub username and repo name
+  static const String _githubOwner = 'Divith123';
+  static const String _githubRepo = 'Playschool';
 
-  /// checks for update and returns Map or null
-  /// returns {'tagName': 'v1.0.1', 'body': 'changelog...', 'assetUrl': '...'}
+  // Custom headers if the repo is private (requires PAT)
+  // static const Map<String, String> _headers = {'Authorization': 'token YOUR_PAT'};
+
+  /// Checks if a new version is available on GitHub Releases
   Future<Map<String, dynamic>?> checkForUpdate() async {
     try {
-      PackageInfo packageInfo = await PackageInfo.fromPlatform();
-      String currentVersion = packageInfo.version;
+      final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+      final String currentVersion = packageInfo.version;
 
-      debugPrint('Current Version: $currentVersion');
+      final Uri url = Uri.parse(
+        'https://api.github.com/repos/$_githubOwner/$_githubRepo/releases/latest',
+      );
 
-      final response = await http.get(Uri.parse(_releasesUrl));
+      final response = await http.get(url);
+
       if (response.statusCode == 200) {
-        final Map<String, dynamic> data = json.decode(response.body);
-        String tagName = data['tag_name'] ?? '';
+        final Map<String, dynamic> releaseData = json.decode(response.body);
+        final String latestTag = releaseData['tag_name'] ?? 'v0.0.0';
 
-        // Remove 'v' prefix if present
-        String cleanTagName = tagName.replaceAll('v', '');
+        // Remove 'v' prefix if present for comparison
+        final String cleanLatest = latestTag.replaceAll('v', '');
+        final String cleanCurrent = currentVersion.replaceAll('v', '');
 
-        if (_isNewVersion(cleanTagName, currentVersion)) {
+        if (_isNewer(cleanLatest, cleanCurrent)) {
           // Find APK asset
-          List assets = data['assets'] ?? [];
-          String? apkUrl;
-          for (var asset in assets) {
-            if (asset['name'].toString().endsWith('.apk')) {
-              apkUrl = asset['browser_download_url'];
-              break;
+          String? downloadUrl;
+          if (releaseData['assets'] != null) {
+            for (var asset in releaseData['assets']) {
+              if (asset['name'].toString().endsWith('.apk')) {
+                downloadUrl = asset['browser_download_url'];
+                break;
+              }
             }
           }
 
-          if (apkUrl != null) {
+          if (downloadUrl != null) {
             return {
-              'tagName': tagName,
-              'body': data['body'] ?? 'New update available.',
-              'assetUrl': apkUrl,
-              'currentVersion': currentVersion,
+              'updateAvailable': true,
+              'latestVersion': latestTag,
+              'releaseNotes': releaseData['body'],
+              'downloadUrl': downloadUrl,
             };
           }
         }
+      } else {
+        debugPrint('GitHub API Error: ${response.statusCode}');
       }
     } catch (e) {
       debugPrint('Error checking for updates: $e');
@@ -58,92 +63,41 @@ class UpdateService {
     return null;
   }
 
-  bool _isNewVersion(String newVersion, String currentVersion) {
-    try {
-      List<int> newV = newVersion.split('.').map((e) => int.parse(e)).toList();
-      List<int> currV = currentVersion
-          .split('.')
-          .map((e) => int.parse(e))
-          .toList();
+  /// Simple version comparison (semver-like)
+  bool _isNewer(String latest, String current) {
+    List<int> l = latest.split('.').map((e) => int.tryParse(e) ?? 0).toList();
+    List<int> c = current.split('.').map((e) => int.tryParse(e) ?? 0).toList();
 
-      for (int i = 0; i < newV.length && i < currV.length; i++) {
-        if (newV[i] > currV[i]) return true;
-        if (newV[i] < currV[i]) return false;
-      }
-      return newV.length > currV.length;
-    } catch (e) {
-      return false; // Version format error
+    // Pad with zeros to ensure equal length
+    while (l.length < 3) l.add(0);
+    while (c.length < 3) c.add(0);
+
+    for (int i = 0; i < 3; i++) {
+      if (l[i] > c[i]) return true;
+      if (l[i] < c[i]) return false;
     }
+    return false;
   }
 
-  Future<void> showUpdateDialog(BuildContext context) async {
-    // Only verify on Android for now as ota_update is for Android
-    if (!Platform.isAndroid) return;
-
-    final updateData = await checkForUpdate();
-    if (updateData != null && context.mounted) {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Update Available (${updateData['tagName']})'),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('A new version is available for download.'),
-                SizedBox(height: 8),
-                Text(
-                  'Changelog:',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Text(updateData['body']),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Later'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-                _startUpdate(context, updateData['assetUrl']);
-              },
-              child: Text('Update Now'),
-            ),
-          ],
-        ),
-      );
-    } else {
-      // debugPrint('No update found');
-    }
+  /// Triggers the OTA download and install
+  Stream<OtaEvent> downloadAndInstall(String url) {
+    return OtaUpdate().execute(
+      url,
+      destinationFilename: 'playschool_update.apk',
+    );
   }
 
-  Future<void> _startUpdate(BuildContext context, String url) async {
-    // Request storage permission if needed (Android < 10)
-    // For Android 11+ scoped storage usually handles this, but install packages permission is managed by OS prompt triggered by intent?
-    // Actually ota_update handles the notification and download.
-    // However, we might need requestInstallPackages permission or Storage.
-
-    // ota_update will start download.
-
-    var status = await Permission.storage.request();
-    if (status.isGranted ||
-        await Permission.storage.isLimited ||
-        Platform.isAndroid) {
-      // Platform.isAndroid check is loose, but let's try.
-      try {
-        OtaUpdate()
-            .execute(url, destinationFilename: 'playschool_update.apk')
-            .listen((OtaEvent event) {
-              // You could show a progress dialog here
-              debugPrint('OTA Status: ${event.status} : ${event.value}');
-            });
-      } catch (e) {
-        debugPrint('Failed to update: $e');
-      }
+  /// Requests necessary storage permissions (Android)
+  Future<bool> requestPermissions() async {
+    if (await Permission.storage.request().isGranted) {
+      return true;
     }
+    // For Android 11+ (Manage External Storage might be needed for some paths,
+    // but usually OtaUpdate handles internal/public dir)
+    // Checking requestInstallPackages for Android 8+
+    if (await Permission.requestInstallPackages.request().isGranted) {
+      return true;
+    }
+    return false;
   }
 }

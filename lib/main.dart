@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:playschool/login_page.dart';
+
+import 'package:playschool/features/common/sitemap_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -18,9 +19,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: const Color(0xFF2BEE6C),
         scaffoldBackgroundColor: const Color(0xFFF6F8F6),
-        textTheme: GoogleFonts.notoSansTextTheme(
-          Theme.of(context).textTheme,
-        ),
+        textTheme: GoogleFonts.notoSansTextTheme(Theme.of(context).textTheme),
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF2BEE6C),
           brightness: Brightness.light,
@@ -31,9 +30,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor: const Color(0xFF2BEE6C),
         scaffoldBackgroundColor: const Color(0xFF102216),
-        textTheme: GoogleFonts.notoSansTextTheme(
-          Theme.of(context).textTheme,
-        ),
+        textTheme: GoogleFonts.notoSansTextTheme(Theme.of(context).textTheme),
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF2BEE6C),
           brightness: Brightness.dark,
@@ -41,7 +38,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.system,
-      home: const LoginPage(),
+      // DEV MODE: Start with Sitemap to verify all pages
+      home: const SitemapPage(),
     );
   }
 }
